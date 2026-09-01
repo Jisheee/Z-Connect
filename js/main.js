@@ -977,6 +977,21 @@ $(document).ready(function () {
   });
 });
 
+function scrollToSidebarTarget(targetSelector) {
+  const target = $(targetSelector);
+  if (!target.length) return;
+
+  const navHeight = navMain.length ? navMain.innerHeight() : 0;
+  const scrollPosition = target.offset().top - navHeight + 1;
+
+  $("html, body").stop(true, true).animate(
+    {
+      scrollTop: Math.max(scrollPosition, 0),
+    },
+    220
+  );
+}
+
 /**
  * Higlight list item for current scroll position
  */
@@ -1000,15 +1015,11 @@ $(document).ready(function () {
 });
 
 $("#sidebar a").on("click", function (event) {
-  event.preventDefault(); // Prevent default anchor behavior
-  let target = $(this).attr("href");
+  event.preventDefault();
+  const target = this.getAttribute("href");
 
-  $("html, body").animate(
-    {
-      scrollTop: $(target).offset().top
-    },
-    500 // Scroll duration in milliseconds
-  );
+  if (!target || target === "#") return;
+  scrollToSidebarTarget(target);
 });
 
 /* ******* Smooth scroll to hash on page load ********/
@@ -1018,16 +1029,9 @@ $("#sidebar a").on("click", function (event) {
     const target = $("#" + hash);
 
     if (target.length) {
-      // Delay to ensure page is fully loaded
       setTimeout(function () {
-        let navHeight = navMain.innerHeight() || 0;
-        let scrollPosition = target.offset().top - navHeight + 1;
-
-        $("html, body").animate(
-          { scrollTop: scrollPosition },
-          500
-        );
-      }, 200);
+        scrollToSidebarTarget("#" + hash);
+      }, 50);
     }
   }
 });

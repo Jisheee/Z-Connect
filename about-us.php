@@ -61,8 +61,8 @@
     <!-- End inner Page hero-->
 
     <!-- Start about Section-->
-    <?php include('inc/about-us-section.php');?>
-    <!-- End about Section-->
+    <!-- <?php include('inc/about-us-section.php');?> -->
+    <!-- End about Section -->
     
     <!-- Start mission-values-vision Section -->
     <?php include('inc/mission-values-vision_section.php');?>
