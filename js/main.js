@@ -10,7 +10,7 @@ const main_window = $(window),
   navMain = $("nav.menu-navbar"),
   toTopBtn = $(".back-to-top"),
   heroVegasSlider = $(".page-hero.hero-vegas-slider"),
-  textInput = $("form.main-form .text-input"),
+  textInput = $("form.main-form .text-input").not("#contact-us-form .text-input"),
   tabLink = $(".ma-tabs .tabs-links .tab-link"),
   portfolioGroup = $(".portfolio .portfolio-group");
 

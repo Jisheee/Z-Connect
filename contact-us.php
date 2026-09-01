@@ -65,29 +65,29 @@
                 <span class="done-msg"></span>
 
                 <div class="input-wrapper">
-                  <input class="text-input" id="user-name" name="UserName" type="text" />
                   <label class="input-label" for="user-name">Name<span class="req">*</span></label>
+                  <input class="text-input" id="user-name" name="UserName" type="text" />
                   <span class="b-border"></span>
                   <span class="error-msg"></span>
                 </div>
 
                 <div class="input-wrapper">
-                  <input class="text-input" id="user-email" name="UserEmail" type="email" />
                   <label class="input-label" for="user-email">Email<span class="req">*</span></label>
+                  <input class="text-input" id="user-email" name="UserEmail" type="email" />
                   <span class="b-border"></span>
                   <span class="error-msg"></span>
                 </div>
 
                 <div class="input-wrapper">
-                  <input class="text-input" id="msg-subject" name="subject" type="text" />
                   <label class="input-label" for="msg-subject">Subject<span class="req">*</span></label>
+                  <input class="text-input" id="msg-subject" name="subject" type="text" />
                   <span class="b-border"></span>
                   <span class="error-msg"></span>
                 </div>
 
                 <div class="input-wrapper textarea-wrapper">
-                  <textarea class="text-input" id="msg-text" name="message"></textarea>
                   <label class="input-label" for="msg-text">Message<span class="req">*</span></label>
+                  <textarea class="text-input" id="msg-text" name="message"></textarea>
                   <span class="b-border"></span>
                   <i></i>
                   <span class="error-msg"></span>
