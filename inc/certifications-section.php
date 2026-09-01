@@ -66,7 +66,7 @@
     <!-- Certifications Grid -->
     <div class="modern-cert-grid mb-5">
       <!-- Card 1 -->
-      <div class="modern-cert-card" style="border-top-color: #0076de;">
+      <div class="modern-cert-card js-gallery-card" data-gallery="certifications" tabindex="0" role="button" aria-label="Open Trailblazer certificate" style="border-top-color: #0076de;">
         <div class="modern-circle-logo"><img src="assets/awards/trailblazer-logo.png" alt="Trailblazer Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">TRAILBLAZER SOLUTIONS</p>
@@ -83,7 +83,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="modern-cert-card" style="border-top-color: #00a3e0;">
+      <div class="modern-cert-card js-gallery-card" data-gallery="certifications" tabindex="0" role="button" aria-label="Open AWS certificate" style="border-top-color: #00a3e0;">
         <div class="modern-circle-logo"><img src="assets/awards/AWS.png" alt="AWS Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">AWS DISTRIBUTION PHIL., CORP.</p>
@@ -100,7 +100,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="modern-cert-card" style="border-top-color: #f59e0b;">
+      <div class="modern-cert-card js-gallery-card" data-gallery="certifications" tabindex="0" role="button" aria-label="Open TestPro certificate" style="border-top-color: #f59e0b;">
         <div class="modern-circle-logo"><img src="assets/awards/AEM.png" alt="TestPro Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">TESTPRO INTERNATIONAL</p>
@@ -115,7 +115,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="modern-cert-card" style="border-top-color: #f59e0b;">
+      <div class="modern-cert-card js-gallery-card" data-gallery="certifications" tabindex="0" role="button" aria-label="Open CCNA certificate" style="border-top-color: #f59e0b;">
         <div class="modern-circle-logo"><img src="assets/awards/CCNA-Cert.png" alt="CCNA Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">CISCO SYSTEMS, INC.</p>
@@ -140,7 +140,7 @@
     <!-- Partner Awards Grid -->
     <div class="modern-partner-grid pb-5">
       <!-- Card 1 -->
-      <div class="modern-partner-card" style="border-top-color: #e53e3e;">
+      <div class="modern-partner-card js-gallery-card" data-gallery="partners" tabindex="0" role="button" aria-label="Open Panduit award" style="border-top-color: #e53e3e;">
         <div class="modern-circle-logo" style="border-color: #e53e3e;"><img
             src="assets/images-zconnect/partner-logos/Network/Panduit.png" alt="Panduit Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -155,7 +155,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="modern-partner-card" style="border-top-color: #3182ce;">
+      <div class="modern-partner-card js-gallery-card" data-gallery="partners" tabindex="0" role="button" aria-label="Open MEC award" style="border-top-color: #3182ce;">
         <div class="modern-circle-logo" style="border-color: #3182ce;"><img
             src="assets/images-zconnect/partner-logos/Network/MEC.png" alt="MEC Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -170,7 +170,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="modern-partner-card" style="border-top-color: #38a169;">
+      <div class="modern-partner-card js-gallery-card" data-gallery="partners" tabindex="0" role="button" aria-label="Open Sytec award" style="border-top-color: #38a169;">
         <div class="modern-circle-logo" style="border-color: #38a169;"><img
             src="assets/images-zconnect/partner-logos/Network/SYTEC.png" alt="Sytec Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -185,7 +185,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="modern-partner-card" style="border-top-color: #805ad5;">
+      <div class="modern-partner-card js-gallery-card" data-gallery="partners" tabindex="0" role="button" aria-label="Open Tyco award" style="border-top-color: #805ad5;">
         <div class="modern-circle-logo" style="border-color: #805ad5;"><img
             src="assets/images-zconnect/partner-logos/Datacenter/T-ELECTRONICS.png" alt="Tyco Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -200,7 +200,7 @@
       </div>
 
       <!-- Card 5 -->
-      <div class="modern-partner-card" style="border-top-color: #d69e2e;">
+      <div class="modern-partner-card js-gallery-card" data-gallery="partners" tabindex="0" role="button" aria-label="Open Belden award" style="border-top-color: #d69e2e;">
         <div class="modern-circle-logo" style="border-color: #d69e2e;"><img
             src="assets/images-zconnect/partner-logos/Network/belden-logo.png" alt="Belden Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>

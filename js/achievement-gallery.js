@@ -77,6 +77,12 @@
 
     cards.forEach(function (card) {
       card.addEventListener('click', function () { open(card); });
+      card.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          open(card);
+        }
+      });
     });
 
     lightbox.querySelector('.achievement-lightbox__close').addEventListener('click', close);
