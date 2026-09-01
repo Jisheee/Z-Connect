@@ -1,0 +1,279 @@
+/* Hero Scroll Container */
+.hero-scroll-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #030812; /* Deep dark blue/black */
+}
+
+/* Canvas for Falling Bits */
+#falling-bits-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* The element that gets pinned */
+.pin-wrap {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  /* Full viewport height */
+  position: relative;
+  will-change: transform;
+}
+
+/* Media Column (Background Video) */
+.media-column {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-scroll-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Text Column (Overlay) */
+.text-column {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.hero-autoplay-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+.hero-autoplay-indicators {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-autoplay-indicator {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.hero-autoplay-indicator.is-active {
+  transform: scale(1.35);
+  background: #0d6efd;
+}
+
+.hero-autoplay-indicator:hover {
+  background-color: #0d6efd;
+}
+
+.scroll-panels {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Make Panel 1 visible by default initially */
+.scroll-panel.panel-1 {
+  visibility: visible;
+}
+
+.hero-text-box {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Panel 1 and 3 content goes on the left to avoid center logo */
+.panel-1 .hero-text-area,
+.panel-3 .hero-text-area {
+  margin-left: 5%;
+  width: 40%;
+}
+
+/* Keep every hero panel's text in the left reading zone. */
+.panel-2 .hero-text-area {
+  margin-left: 5%;
+  width: 40%;
+}
+
+/* Panel 4 content goes on the left */
+.panel-4 .hero-text-area {
+  margin-left: 5%;
+  width: 40%;
+  padding: 50px 40px;
+
+  /* Premium Glassmorphism */
+  background: rgba(15, 20, 25, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  /* Borders and Glow */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 150, 255, 0.15);
+
+  /* Text Alignment */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.panel-4 .slide-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #7db9e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.panel-4 .hero-social-icons,
+.panel-4 .cta-links-area {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.panel-4 .cta-links-area {
+  margin-top: 10px;
+}
+
+.panel-4 .btn-solid {
+  box-shadow: 0 5px 15px rgba(0, 120, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.panel-4 .btn-solid:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 120, 255, 0.6);
+}
+
+/* Fix Social Media Icons Visibility */
+.hero-social-icons .sc-list {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.hero-social-icons .sc-icon {
+  color: #FFCC00 !important; /* Yellow to match logo accent */
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.hero-social-icons .sc-link:hover .sc-icon {
+  color: #FFFF33 !important; /* Brighter yellow on hover */
+  text-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Mobile Fixes for Panel 4 */
+@media (max-width: 768px) {
+  .panel-4 .hero-text-area {
+    padding: 0 15px; /* Less padding so text fits */
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+  .panel-4 .slide-title {
+    font-size: 2rem !important; /* Smaller title to prevent cutoff */
+  }
+
+  /* Shrink logos so they don't stack into a huge block that covers the button */
+  .panel-4-partners .clients-logos {
+    gap: 10px !important;
+  }
+  
+  .panel-4-partners .logo {
+    max-height: 35px !important;
+  }
+  
+  .panel-4-partners {
+    bottom: 20px !important; /* Push closer to the bottom edge */
+  }
+}
+
+.scroll-panel .slide-title {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.scroll-panel .slide-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 991px) {
+
+  .hero-autoplay-controls {
+    bottom: 20px;
+  }
+
+  .panel-1 .hero-text-area,
+  .panel-2 .hero-text-area,
+  .panel-3 .hero-text-area {
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .text-column {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
