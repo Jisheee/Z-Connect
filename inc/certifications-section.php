@@ -66,7 +66,7 @@
     <!-- Certifications Grid -->
     <div class="modern-cert-grid mb-5">
       <!-- Card 1 -->
-      <div class="modern-cert-card" style="border-top-color: #0076de;">
+      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #0076de; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="0">
         <div class="modern-circle-logo"><img src="assets/awards/trailblazer-logo.png" alt="Trailblazer Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">TRAILBLAZER SOLUTIONS</p>
@@ -83,7 +83,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="modern-cert-card" style="border-top-color: #00a3e0;">
+      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #00a3e0; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="1">
         <div class="modern-circle-logo"><img src="assets/awards/AWS.png" alt="AWS Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">AWS DISTRIBUTION PHIL., CORP.</p>
@@ -100,7 +100,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="modern-cert-card" style="border-top-color: #f59e0b;">
+      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #f59e0b; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="2">
         <div class="modern-circle-logo"><img src="assets/awards/AEM.png" alt="TestPro Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">TESTPRO INTERNATIONAL</p>
@@ -115,7 +115,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="modern-cert-card" style="border-top-color: #f59e0b;">
+      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #f59e0b; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="3">
         <div class="modern-circle-logo"><img src="assets/awards/CCNA-Cert.png" alt="CCNA Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">CISCO SYSTEMS, INC.</p>
@@ -140,7 +140,7 @@
     <!-- Partner Awards Grid -->
     <div class="modern-partner-grid pb-5">
       <!-- Card 1 -->
-      <div class="modern-partner-card" style="border-top-color: #e53e3e;">
+      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #e53e3e; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="0">
         <div class="modern-circle-logo" style="border-color: #e53e3e;"><img
             src="assets/images-zconnect/partner-logos/Network/Panduit.png" alt="Panduit Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -155,7 +155,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="modern-partner-card" style="border-top-color: #3182ce;">
+      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #3182ce; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="1">
         <div class="modern-circle-logo" style="border-color: #3182ce;"><img
             src="assets/images-zconnect/partner-logos/Network/MEC.png" alt="MEC Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -170,7 +170,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="modern-partner-card" style="border-top-color: #38a169;">
+      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #38a169; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="2">
         <div class="modern-circle-logo" style="border-color: #38a169;"><img
             src="assets/images-zconnect/partner-logos/Network/SYTEC.png" alt="Sytec Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -185,7 +185,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="modern-partner-card" style="border-top-color: #805ad5;">
+      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #805ad5; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="3">
         <div class="modern-circle-logo" style="border-color: #805ad5;"><img
             src="assets/images-zconnect/partner-logos/Datacenter/T-ELECTRONICS.png" alt="Tyco Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -200,7 +200,7 @@
       </div>
 
       <!-- Card 5 -->
-      <div class="modern-partner-card" style="border-top-color: #d69e2e;">
+      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #d69e2e; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="4">
         <div class="modern-circle-logo" style="border-color: #d69e2e;"><img
             src="assets/images-zconnect/partner-logos/Network/belden-logo.png" alt="Belden Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -217,6 +217,17 @@
   </div>
 </section>
 
+<!-- Certification Card Modal -->
+<div class="modal fade" id="certModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 650px; width: 95%;">
+    <div class="modal-content" style="background: transparent; border: none; box-shadow: none;">
+      <div class="modal-body p-0" id="modalCardContent">
+        <!-- Card content will be cloned here -->
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ISO Certificate Modal -->
 <div class="modal fade" id="isoModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" style="max-width: 98vw; width: auto;">
@@ -227,3 +238,40 @@
     </div>
   </div>
 </div>
+
+<script>
+// Handle certification and partner card modal
+document.addEventListener('DOMContentLoaded', function() {
+  const certModal = document.getElementById('certModal');
+  if (certModal) {
+    certModal.addEventListener('show.bs.modal', function(e) {
+      const button = e.relatedTarget;
+      const cardIndex = button.getAttribute('data-card-index');
+      const cardType = button.getAttribute('data-card-type') || 'cert';
+      
+      let selectedCard;
+      if (cardType === 'partner') {
+        const cards = document.querySelectorAll('.partner-card-clickable');
+        selectedCard = cards[cardIndex];
+      } else {
+        const cards = document.querySelectorAll('.cert-card-clickable');
+        selectedCard = cards[cardIndex];
+      }
+      
+      if (selectedCard) {
+        const modalBody = document.getElementById('modalCardContent');
+        // Clone the card and display in modal
+        const clonedCard = selectedCard.cloneNode(true);
+        clonedCard.style.cursor = 'default';
+        clonedCard.removeAttribute('data-bs-toggle');
+        clonedCard.removeAttribute('data-bs-target');
+        clonedCard.removeAttribute('data-card-index');
+        clonedCard.removeAttribute('data-card-type');
+        
+        modalBody.innerHTML = '';
+        modalBody.appendChild(clonedCard);
+      }
+    });
+  }
+});
+</script>

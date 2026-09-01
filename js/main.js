@@ -10,7 +10,7 @@ const main_window = $(window),
   navMain = $("nav.menu-navbar"),
   toTopBtn = $(".back-to-top"),
   heroVegasSlider = $(".page-hero.hero-vegas-slider"),
-  textInput = $("form.main-form .text-input"),
+  textInput = $("form.main-form .text-input").not("#contact-us-form .text-input"),
   tabLink = $(".ma-tabs .tabs-links .tab-link"),
   portfolioGroup = $(".portfolio .portfolio-group");
 
@@ -282,10 +282,62 @@ $(function () {
     });
   }
 
+  // Start Teleport To Window Top When Clicking on Back To Top Button
+  let $teleportOverlay = null;
+  let $teleportVideo = null;
+
+  function initTeleportOverlay() {
+    if (!$teleportOverlay) {
+      $teleportOverlay = $(`
+        <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000000;z-index:999999;display:none;will-change:opacity;transform:translateZ(0);">
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:400px;aspect-ratio:16/9;overflow:hidden;">
+            <video src="assets/images-zconnect/index-page/Optimized-Logo-Movie-v1.webm" muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;background:radial-gradient(ellipse at center, transparent 35%, #000000 75%);"></div>
+          </div>
+        </div>
+      `);
+      $('body').append($teleportOverlay);
+      $teleportVideo = $teleportOverlay.find('video')[0];
+    }
+  }
+
+  // Pre-initialize overlay on idle so video buffers in background
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(initTeleportOverlay);
+  } else {
+    setTimeout(initTeleportOverlay, 1000);
+  }
+
   $(toTopBtn).on("click", function (e) {
     e.preventDefault();
-    root.stop(true, false).animate({ scrollTop: 0 }, 250);
+    initTeleportOverlay();
+
+    // Reset video time to start cleanly
+    if ($teleportVideo) {
+      $teleportVideo.currentTime = 0;
+      $teleportVideo.playbackRate = 5.0; // Smooth hardware-decoded speed
+      let playPromise = $teleportVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => { /* Video autoplay block handling */ });
+      }
+    }
+
+    // Fade in overlay smoothly, jump to top, then fade out
+    $teleportOverlay.stop(true, true).fadeIn(200, function () {
+      root.css("scroll-behavior", "auto").scrollTop(0);
+      window.scrollTo(0, 0);
+
+      setTimeout(function () {
+        $teleportOverlay.fadeOut(400, function () {
+          root.css("scroll-behavior", "smooth");
+          if ($teleportVideo) {
+            $teleportVideo.pause();
+          }
+        });
+      }, 1100);
+    });
   });
+  // End Teleport To Window Top When Clicking on Back To Top Button
 
   /* Start Portfolio btns  */
   if ($(".portfolio .portfolio-btn").length) {
@@ -950,16 +1002,12 @@ $(document).ready(function () {
 $("#sidebar a").on("click", function (event) {
   event.preventDefault(); // Prevent default anchor behavior
   let target = $(this).attr("href");
-  let section = $(target);
-  let leadImage = section.find(".featured-img-area").first();
-  let scrollTarget = leadImage.length ? leadImage : section;
-  let headerOffset = navMain.innerHeight() || 0;
 
-  $("html, body").stop(true, false).animate(
+  $("html, body").animate(
     {
-      scrollTop: scrollTarget.offset().top - headerOffset - 16
+      scrollTop: $(target).offset().top
     },
-    150 // Keep service navigation responsive
+    500 // Scroll duration in milliseconds
   );
 });
 
@@ -992,5 +1040,5 @@ $('#eventModal').on('show.bs.modal', function (event) {
   var modal = $(this);
   modal.find('#modalImage').attr('src', imgSrc);
   modal.find('#modalTitle').text(imgTitle);
-})();
+});
 

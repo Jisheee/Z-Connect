@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&amp;display=swap">
         
         <!-- main-LTR -->
-        <link rel="stylesheet" href="css/main-LTR.css">
+        <link rel="stylesheet" href="css/main-LTR.css?v=2">
         <title>Z-Connect   |   About Us</title>
   </head>
   <body>
@@ -60,9 +60,13 @@
     </section>
     <!-- End inner Page hero-->
 
-    <!-- Start About / Mission / Vision / Values Section-->
+    <!-- Start about Section-->
+    <?php include('inc/about-us-section.php');?>
+    <!-- End about Section-->
+    
+    <!-- Start mission-values-vision Section -->
     <?php include('inc/mission-values-vision_section.php');?>
-    <!-- End About / Mission / Vision / Values Section -->
+    <!-- End mission-values-vision Section -->
     
     <!-- Start  our-team Section-->
     <?php // include('inc/our-team-section.php');?>
