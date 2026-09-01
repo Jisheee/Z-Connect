@@ -128,6 +128,9 @@
         
         <!--     Sticky Solutions (Cipher-style scroll)     -->
         <script src="js/sticky-solutions.js"></script>
+
+        <!-- Home achievement gallery -->
+        <script src="js/achievement-gallery.js"></script>
         
         <!-- Falling Bits Animation -->
         <script src="js/falling-bits.js"></script>

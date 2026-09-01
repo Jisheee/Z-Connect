@@ -493,3 +493,279 @@
     padding: 14px 24px;
   }
 }
+
+/* ============================================================
+   HOME PAGE — open solutions grid
+   ============================================================ */
+.home-page .sticky-solutions {
+  --ss-bg: #071b2b;
+  --ss-accent: #23b5d3;
+  --ss-text-muted: rgba(231, 245, 249, 0.72);
+  background-color: var(--ss-bg);
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(35, 181, 211, 0.14), transparent 36%),
+    radial-gradient(ellipse at 88% 38%, rgba(16, 115, 172, 0.18), transparent 42%),
+    radial-gradient(ellipse at 52% 105%, rgba(9, 175, 244, 0.1), transparent 44%),
+    linear-gradient(118deg, #061827 0%, #082a3c 48%, #061d31 100%);
+}
+
+.home-page .sticky-solutions__grid-lines,
+.home-page .sticky-solutions__media-col {
+  display: none;
+}
+
+.home-page .sticky-solutions__container {
+  max-width: 1240px;
+  padding: 92px 32px 96px;
+}
+
+.home-page .sticky-solutions__rail-sticky {
+  padding: 0 0 42px;
+}
+
+.home-page .sticky-solutions__upper {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #ffffff;
+  opacity: 1;
+  text-align: center;
+}
+
+.home-page .sticky-solutions__upper::after {
+  content: 'Built around your business, ready for what comes next.';
+  display: block;
+  max-width: 510px;
+  margin: 18px auto 0;
+  color: var(--ss-text-muted);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.home-page .sticky-solutions__body {
+  display: block;
+}
+
+.home-page .sticky-solutions__text-col {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0;
+}
+
+.home-page .sticky-solutions__step {
+  min-height: 330px;
+  height: 330px;
+  padding: 0;
+  position: relative;
+  top: auto !important;
+  z-index: 1 !important;
+  overflow: hidden;
+  border: 1px solid rgba(177, 229, 238, 0.2);
+  border-radius: 8px;
+  background: #0c3044;
+  box-shadow: none;
+  isolation: isolate;
+  perspective: 1000px;
+}
+
+.home-page .sticky-solutions__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.home-page .sticky-solutions__step.flipped .sticky-solutions__card-inner {
+  transform: rotateY(180deg);
+}
+
+.home-page .sticky-solutions__card-front,
+.home-page .sticky-solutions__card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
+
+.home-page .sticky-solutions__card-front {
+  justify-content: flex-end;
+  padding: 28px;
+  transform: translateZ(1px);
+}
+
+.home-page .sticky-solutions__card-back {
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 30px;
+  overflow: auto;
+  color: rgba(231, 245, 249, 0.9);
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(35, 181, 211, 0.2), transparent 36%),
+    linear-gradient(145deg, #0d3b58, #071c32 78%);
+  border: 1px solid rgba(124, 227, 241, 0.34);
+  transform: rotateY(180deg);
+}
+
+.home-page .sticky-solutions__step.flipped .sticky-solutions__card-front {
+  pointer-events: none;
+}
+
+.home-page .sticky-solutions__step:not(.flipped) .sticky-solutions__card-back {
+  pointer-events: none;
+}
+
+.home-page .sticky-solutions__back-desc {
+  max-width: 440px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.home-page .sticky-solutions__back-desc + .sticky-solutions__back-desc {
+  margin-top: 2px;
+}
+
+.home-page .sticky-solutions__step::before,
+.home-page .sticky-solutions__step::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-page .sticky-solutions__step::before {
+  z-index: -2;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.45;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.home-page .sticky-solutions__step::after {
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(4, 18, 28, 0.08) 20%, rgba(4, 18, 28, 0.96) 100%);
+}
+
+.home-page .sticky-solutions__step:nth-child(1)::before { background-image: url('../assets/images-zconnect/services/Networking-and-Structured-Cabling.jpg'); }
+.home-page .sticky-solutions__step:nth-child(2)::before { background-image: url('../assets/images-zconnect/services/Data-Center.jpg'); }
+.home-page .sticky-solutions__step:nth-child(3)::before { background-image: url('../assets/images-zconnect/services/Ancillary-Devices-1.jpg'); }
+.home-page .sticky-solutions__step:nth-child(4)::before { background-image: url('../assets/images-zconnect/services/Building-Management-System.jpeg'); }
+.home-page .sticky-solutions__step:nth-child(5)::before { background-image: url('../assets/images-zconnect/services/Managed-Support-Services.jpg'); }
+.home-page .sticky-solutions__step:nth-child(6)::before { background-image: url('../assets/images-zconnect/services/Infrastructure-Assessment.jpg'); }
+
+.home-page .sticky-solutions__step:hover {
+  transform: translateY(-5px);
+  border-color: rgba(35, 181, 211, 0.7);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+}
+
+.home-page .sticky-solutions__step:hover::before {
+  opacity: 0.62;
+  transform: scale(1.05);
+}
+
+.home-page .sticky-solutions__step-num,
+.home-page .sticky-solutions__step-title,
+.home-page .sticky-solutions__step-desc {
+  position: relative;
+  z-index: 1;
+}
+
+.home-page .sticky-solutions__step-num {
+  margin-bottom: 10px;
+  color: #7ce3f1;
+}
+
+.home-page .sticky-solutions__step-title {
+  margin-bottom: 10px;
+  font-size: 23px;
+}
+
+.home-page .sticky-solutions__step-desc {
+  display: none;
+}
+
+.home-page .sticky-solutions__mobile-partners {
+  display: none !important;
+}
+
+.home-page .sticky-solutions__cta-wrap {
+  justify-content: center;
+  padding: 42px 0 0;
+}
+
+.home-page .sticky-solutions__cta {
+  background: #23b5d3;
+  color: #06202f;
+}
+
+.home-page .sticky-solutions__cta i {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .home-page .sticky-solutions__container {
+    padding: 68px 24px 72px;
+  }
+
+  .home-page .sticky-solutions__text-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .home-page .sticky-solutions__step {
+    min-height: 290px;
+    height: 290px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-page .sticky-solutions__container {
+    padding: 52px 16px 56px;
+  }
+
+  .home-page .sticky-solutions__rail-sticky {
+    padding-bottom: 30px;
+  }
+
+  .home-page .sticky-solutions__upper {
+    font-size: 40px;
+  }
+
+  .home-page .sticky-solutions__upper::after {
+    font-size: 15px;
+  }
+
+  .home-page .sticky-solutions__text-col {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .sticky-solutions__step {
+    min-height: 250px;
+    height: 250px;
+  }
+
+  .home-page .sticky-solutions__card-front,
+  .home-page .sticky-solutions__card-back {
+    padding: 24px;
+  }
+
+  .home-page .sticky-solutions__back-desc {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}

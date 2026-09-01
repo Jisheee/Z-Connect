@@ -44,12 +44,15 @@
         
         <!-- Sticky Solutions (Cipher-style scroll section) -->
         <link rel="stylesheet" href="css/sticky-solutions.css">
+
+        <!-- Achievement gallery -->
+        <link rel="stylesheet" href="css/achievement-gallery.css?v=2">
         
         <!-- Hero Scroll CSS -->
         <link rel="stylesheet" href="css/hero-scroll.css">
         <title>Z-Connect</title>
   </head>
-  <body>
+  <body class="home-page">
   
     <!--Start Page Header-->
     <?php include('inc/header-section.php');?>

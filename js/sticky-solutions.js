@@ -15,6 +15,11 @@
   'use strict';
 
   function init() {
+    if (document.body.classList.contains('home-page')) {
+      initHomeFlipCards();
+      return;
+    }
+
     var section = document.querySelector('.sticky-solutions');
     if (!section) return;
 
@@ -161,6 +166,56 @@
     window.addEventListener('resize', function () {
       updateStickyMedia();
       updateActiveStep();
+    });
+  }
+
+  function initHomeFlipCards() {
+    var cards = Array.from(document.querySelectorAll('.home-page .sticky-solutions__step'));
+    if (!cards.length) return;
+
+    cards.forEach(function (card) {
+      var inner = document.createElement('div');
+      var front = document.createElement('div');
+      var back = document.createElement('div');
+      var descriptions = Array.from(card.querySelectorAll('.sticky-solutions__step-desc'));
+
+      inner.className = 'sticky-solutions__card-inner';
+      front.className = 'sticky-solutions__card-front';
+      back.className = 'sticky-solutions__card-back';
+      back.setAttribute('aria-hidden', 'true');
+
+      while (card.firstChild) {
+        front.appendChild(card.firstChild);
+      }
+
+      descriptions.forEach(function (description) {
+        var backDescription = document.createElement('p');
+        backDescription.className = 'sticky-solutions__back-desc';
+        backDescription.textContent = description.textContent;
+        back.appendChild(backDescription);
+      });
+
+      inner.appendChild(front);
+      inner.appendChild(back);
+      card.appendChild(inner);
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-pressed', 'false');
+
+      function toggleFlip() {
+        var flipped = card.classList.toggle('flipped');
+        card.setAttribute('aria-pressed', String(flipped));
+        back.setAttribute('aria-hidden', String(!flipped));
+        front.setAttribute('aria-hidden', String(flipped));
+      }
+
+      card.addEventListener('click', toggleFlip);
+      card.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleFlip();
+        }
+      });
     });
   }
 
