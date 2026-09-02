@@ -981,15 +981,35 @@ function scrollToSidebarTarget(targetSelector) {
   const target = $(targetSelector);
   if (!target.length) return;
 
-  const navHeight = navMain.length ? navMain.innerHeight() : 0;
-  const scrollPosition = target.offset().top - navHeight + 1;
+  // Find the featured image in the target section
+  const featuredImg = target.find('.featured-img-area').first();
+  if (!featuredImg.length) return;
 
-  $("html, body").stop(true, true).animate(
-    {
-      scrollTop: Math.max(scrollPosition, 0),
-    },
-    220
-  );
+  // Get the vertical position of the sidebar title "List of Services"
+  const sidebarTitle = $('.sidebar-title');
+  let alignmentOffset = 0;
+  
+  if (sidebarTitle.length) {
+    // Get the top of the sidebar title relative to the viewport
+    const sidebarTitleRect = sidebarTitle[0].getBoundingClientRect();
+    alignmentOffset = sidebarTitleRect.top;
+  } else {
+    // Fallback: use nav height if sidebar title not found
+    alignmentOffset = navMain.length ? navMain.innerHeight() : 0;
+  }
+
+  // Calculate scroll position: featured image top - alignment offset
+  const scrollPosition = featuredImg.offset().top - alignmentOffset;
+
+  window.scrollTo({
+    top: Math.max(scrollPosition, 0),
+    behavior: 'auto'
+  });
+  
+  // Immediately highlight the clicked button
+  const linkHref = targetSelector.startsWith('#') ? targetSelector : '#' + targetSelector;
+  $('#sidebar li a').parent().removeClass('active');
+  $('#sidebar li a[href="' + linkHref + '"]').parent().addClass('active');
 }
 
 /**
@@ -998,12 +1018,24 @@ function scrollToSidebarTarget(targetSelector) {
 $(document).ready(function () {
   let sections = $("section");
   let navLinks = $("#sidebar li a");
+  
+  // Get sidebar title offset once on load
+  const sidebarTitle = $('.sidebar-title');
+  let alignmentOffset = 0;
+  
+  if (sidebarTitle.length) {
+    alignmentOffset = sidebarTitle[0].getBoundingClientRect().top;
+  }
 
   $(window).on("scroll", function () {
     let scrollPos = $(document).scrollTop();
 
     sections.each(function () {
-      let top = $(this).offset().top - 150;
+      const featuredImg = $(this).find('.featured-img-area').first();
+      if (!featuredImg.length) return;
+      
+      // Align with sidebar title position
+      let top = featuredImg.offset().top - alignmentOffset;
       let bottom = top + $(this).outerHeight();
 
       if (scrollPos >= top && scrollPos < bottom) {
