@@ -17,10 +17,10 @@
             }
             ?>
             <ul class="list-js links-list">
-              <li class="menu-item has-sub-menu"><a class="menu-link<?php echo nav_active('index.php', $current_page); ?>" href="index.php">home<i class="fas"> </i></a></li>
-              <li class="menu-item has-sub-menu"><a class="menu-link<?php echo nav_active('services.php', $current_page); ?>" href="services.php">solutions<i class="fas"> </i></a></li>
-              <li class="menu-item"><a class="menu-link<?php echo nav_active('about-us.php', $current_page); ?>" href="about-us.php">about us</a></li>
-              <li class="menu-item"><a class="menu-link<?php echo nav_active('contact-us.php', $current_page); ?>" href="contact-us.php">contact us</a></li>
+              <li class="menu-item has-sub-menu"><a class="menu-link<?php echo nav_active('index.php', $current_page); ?>" href="index.php"><span class="nav-label">home</span><i class="fas"> </i></a></li>
+              <li class="menu-item has-sub-menu"><a class="menu-link<?php echo nav_active('services.php', $current_page); ?>" href="services.php"><span class="nav-label">solutions</span><i class="fas"> </i></a></li>
+              <li class="menu-item"><a class="menu-link<?php echo nav_active('about-us.php', $current_page); ?>" href="about-us.php"><span class="nav-label">about us</span></a></li>
+              <li class="menu-item"><a class="menu-link<?php echo nav_active('contact-us.php', $current_page); ?>" href="contact-us.php"><span class="nav-label">contact us</span></a></li>
             </ul>
           </div>
           
