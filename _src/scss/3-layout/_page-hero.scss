@@ -880,12 +880,8 @@
 
 // Start inner pages hero section
 .inner-page-hero {
-  display: flex;
-  align-items: center;
   height: 60vh;
   min-height: 60vh;
-  margin-top: 90px;
-  padding: 0;
   opacity: 1;
   &:before {
     display: none;
@@ -899,7 +895,7 @@
 
     .hero-title {
       margin-bottom: 0.5rem;
-      line-height: 1.1;
+      line-height: 0.5;
     }
 
     &.centerd {

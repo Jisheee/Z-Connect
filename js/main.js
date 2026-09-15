@@ -1047,11 +1047,15 @@ $(document).ready(function () {
 });
 
 $("#sidebar a").on("click", function (event) {
-  event.preventDefault();
-  const target = this.getAttribute("href");
+  event.preventDefault(); // Prevent default anchor behavior
+  let target = $(this).attr("href");
 
-  if (!target || target === "#") return;
-  scrollToSidebarTarget(target);
+  $("html, body").animate(
+    {
+      scrollTop: $(target).offset().top
+    },
+    500 // Scroll duration in milliseconds
+  );
 });
 
 /* ******* Smooth scroll to hash on page load ********/
@@ -1061,9 +1065,16 @@ $("#sidebar a").on("click", function (event) {
     const target = $("#" + hash);
 
     if (target.length) {
+      // Delay to ensure page is fully loaded
       setTimeout(function () {
-        scrollToSidebarTarget("#" + hash);
-      }, 50);
+        let navHeight = navMain.innerHeight() || 0;
+        let scrollPosition = target.offset().top - navHeight + 1;
+
+        $("html, body").animate(
+          { scrollTop: scrollPosition },
+          500
+        );
+      }, 200);
     }
   }
 });

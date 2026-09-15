@@ -151,7 +151,7 @@ $padding-for-hero-section: $link-height;
     }
   }
   .menu-wrapper {
-    margin-#{$end-direction}: 0;
+    margin-#{$end-direction}: auto;
     margin-#{$start-direction}: auto;
     &.links-at-end {
       margin-#{$start-direction}: auto;
