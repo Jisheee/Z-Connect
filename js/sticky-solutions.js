@@ -18,6 +18,44 @@
     var section = document.querySelector('.sticky-solutions');
     if (!section) return;
 
+    var folderTabs = Array.from(section.querySelectorAll('.folder-solutions__tab'));
+    var folderPanels = Array.from(section.querySelectorAll('.folder-solutions__panel'));
+    if (folderTabs.length && folderPanels.length) {
+      var legacyPartners = Array.from(section.querySelectorAll('.sticky-solutions__partners-layer'));
+      legacyPartners.forEach(function (partnerLayer, index) {
+        var partnerSlot = section.querySelector('[data-folder-partners="' + index + '"]');
+        if (partnerSlot && partnerLayer.querySelector('.partner-logo')) {
+          partnerLayer.classList.remove('is-active');
+          partnerSlot.appendChild(partnerLayer);
+        }
+      });
+
+      folderTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var index = tab.getAttribute('data-folder-index');
+          folderTabs.forEach(function (item) {
+            var active = item === tab;
+            item.classList.toggle('is-active', active);
+            item.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          folderPanels.forEach(function (panel) {
+            var active = panel.getAttribute('data-folder-panel') === index;
+            panel.hidden = !active;
+            panel.classList.toggle('is-active', active);
+          });
+          section.querySelectorAll('[data-folder-partners]').forEach(function (slot) {
+            var active = slot.getAttribute('data-folder-partners') === index;
+            slot.querySelectorAll('.sticky-solutions__partners-layer').forEach(function (layer) {
+              layer.classList.toggle('is-active', active);
+            });
+          });
+        });
+      });
+      var firstPartner = section.querySelector('[data-folder-partners="0"] .sticky-solutions__partners-layer');
+      if (firstPartner) firstPartner.classList.add('is-active');
+      return;
+    }
+
     var steps = Array.from(section.querySelectorAll('.sticky-solutions__step'));
     var images = Array.from(section.querySelectorAll('.sticky-solutions__media-img'));
     var partners = Array.from(section.querySelectorAll('.sticky-solutions__partners-layer'));

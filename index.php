@@ -40,7 +40,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&amp;display=swap">
         
         <!-- main-LTR -->
-        <link rel="stylesheet" href="css/main-LTR.css">
+        <link rel="stylesheet" href="css/main-LTR.css?v=2">
         
         <!-- Sticky Solutions (Cipher-style scroll section) -->
         <link rel="stylesheet" href="css/sticky-solutions.css">
@@ -155,6 +155,15 @@
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <div class="hero-autoplay-controls" aria-label="Hero controls">
+        <div class="hero-autoplay-indicators" role="tablist" aria-label="Hero panels">
+          <button class="hero-autoplay-indicator is-active" type="button" role="tab" aria-label="Show panel 1" aria-selected="true" data-panel="0"></button>
+          <button class="hero-autoplay-indicator" type="button" role="tab" aria-label="Show panel 2" aria-selected="false" data-panel="1"></button>
+          <button class="hero-autoplay-indicator" type="button" role="tab" aria-label="Show panel 3" aria-selected="false" data-panel="2"></button>
+          <button class="hero-autoplay-indicator" type="button" role="tab" aria-label="Show panel 4" aria-selected="false" data-panel="3"></button>
         </div>
       </div>
     </section>

@@ -1,7 +1,8 @@
     <section class="about mega-section" id="about">
   <div class="container">
-    <div class="content-block">
-      <div class="row">
+    <div class="content-block about-story-layout">
+      <div class="about-story-kicker">Z-Connect / Our story</div>
+      <div class="row align-items-stretch">
         <div class="col-12 col-lg-5 d-flex align-items-center order-1 order-lg-0 about-col pad-end wow fadeInUp" data-wow-delay="0.6s">
           <div class="text-area">
             <div class="sec-heading light-title ">
@@ -18,6 +19,7 @@
               </div>
             </div>
             <p class="about-text">Z-Connect, Inc., formerly known as RJEN Innovative IT Solutions, Co. Ltd., was originally established in 2005 as a limited partnership before transitioning into a corporate structure in 2017. This transformation strengthened our foundation and reflects our continued commitment to delivering reliable solutions, long-term stability, and exceptional service to our clients.</p>
+            <div class="about-story-meta"><span>Established 2005</span><span>IT infrastructure partner</span></div>
             
             <?php
             $current_page = basename($_SERVER['PHP_SELF']);
@@ -29,10 +31,11 @@
         </div>
 
         <div class="col-12 col-lg-7 d-flex align-items-center order-0 order-lg-1 about-col wow fadeInUp" data-wow-delay="0.2s">
-          <div class="img-area custom-grow-area" data-tilt>
+          <div class="img-area custom-grow-area about-story-visual" data-tilt>
             <div class="image">
               <img class="about-img img-fluid force-large-img" loading="lazy" src="assets/images-zconnect/logo/RJEN LOGO.jpg" alt="Our vision">
             </div>
+            <span class="about-visual-label">Built on trust</span>
           </div>
         </div>
 
