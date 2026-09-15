@@ -116,7 +116,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  width: 100%;
+  transition: width 0.25s ease, margin-left 0.25s ease, filter 0.25s ease;
 }
 
 .folder-solutions__tab { background: #1073ac; }
@@ -126,8 +127,8 @@
 .folder-solutions__tab:nth-child(5) { background: #32558c; }
 .folder-solutions__tab:nth-child(6) { background: #1f6f8b; }
 .folder-solutions__tab:hover,
-.folder-solutions__tab:focus-visible { filter: brightness(1.15); outline: none; transform: translateX(6px); }
-.folder-solutions__tab.is-active { transform: translateX(18px); filter: brightness(1.18); }
+.folder-solutions__tab:focus-visible { filter: brightness(1.15); outline: none; }
+.folder-solutions__tab.is-active { width: calc(100% - 18px); margin-left: 18px; filter: brightness(1.18); }
 .folder-solutions__tab span { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; opacity: 0.75; }
 .folder-solutions__tab strong { font-size: 15px; font-weight: 600; }
 
@@ -141,7 +142,6 @@
   border-radius: 0 16px 16px 16px;
   overflow: hidden;
   box-shadow: 0 18px 45px rgba(0,0,0,0.3);
-  animation: folder-panel-in 0.25s ease both;
 }
 .folder-solutions__panel[hidden] { display: none; }
 .folder-solutions__image-wrap { height: 600px; overflow: hidden; border-radius: 16px 0 0 16px; }
@@ -157,6 +157,12 @@
 .folder-solutions__partners .partner-logos-grid { padding: 14px; gap: 10px; }
 .folder-solutions__partners .partner-logo { max-width: 64px; max-height: 32px; }
 @keyframes folder-panel-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.folder-solutions__panel.is-active { animation: folder-panel-in 0.45s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .folder-solutions__tab,
+  .folder-solutions__panel.is-active { transition: none; animation: none; }
+}
 
 .sticky-solutions__body { display: none !important; }
 
@@ -495,6 +501,8 @@
   .folder-solutions__tab:focus-visible {
     min-height: 64px;
     border-radius: 8px;
+    width: 100%;
+    margin-left: 0;
     transform: none;
   }
 

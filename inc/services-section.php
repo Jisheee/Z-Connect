@@ -27,27 +27,27 @@
           </div>
           <div class="folder-solutions__content">
             <article class="folder-solutions__panel is-active" role="tabpanel" id="folder-panel-0" aria-labelledby="folder-tab-0" data-folder-panel="0">
-              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Networking-and-Structured-Cabling.jpg" alt="Networking and Structured Cabling" /></div>
+              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Networking-and-Structured-Cabling.png" alt="Networking and Structured Cabling" /></div>
               <div class="folder-solutions__copy"><span class="folder-solutions__eyebrow">01 / Infrastructure</span><h2>Networking &amp; Structured Cabling System</h2><p>High-bandwidth infrastructure supporting business growth. Scalable IT solutions for enterprise networks and data centers.</p><p>Future-proof cabling designed for simple expansion, reliable performance, and quick deployment of new services.</p><div class="folder-solutions__partners" data-folder-partners="0"></div></div>
             </article>
             <article class="folder-solutions__panel" role="tabpanel" id="folder-panel-1" aria-labelledby="folder-tab-1" data-folder-panel="1" hidden>
-              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Data-Center.jpg" alt="Data Center Solutions" loading="lazy" /></div>
+              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Data-Center.png" alt="Data Center Solutions" loading="lazy" /></div>
               <div class="folder-solutions__copy"><span class="folder-solutions__eyebrow">02 / Reliability</span><h2>Data Center</h2><p>Optimized facilities meeting operational and capacity requirements with expert solutions for power, cooling, consolidation, and compliance.</p><p>Reliable, scalable environments engineered for peak performance and long-term flexibility.</p><div class="folder-solutions__partners" data-folder-partners="1"></div></div>
             </article>
             <article class="folder-solutions__panel" role="tabpanel" id="folder-panel-2" aria-labelledby="folder-tab-2" data-folder-panel="2" hidden>
-              <div class="folder-solutions__image-wrap"><img class="ancillary-service-image" src="assets/images-zconnect/services/Ancillary-Devices-1.jpg" alt="Ancillary Devices" loading="lazy" /></div>
+              <div class="folder-solutions__image-wrap"><img class="ancillary-service-image" src="assets/images-zconnect/services/Ancillary-Devices-1.png" alt="Ancillary Devices" loading="lazy" /></div>
               <div class="folder-solutions__copy"><span class="folder-solutions__eyebrow">03 / Protection</span><h2>Ancillary Devices</h2><p>Complete physical security solutions including access control, surveillance, and fire detection.</p><p>CCTV, biometrics, FDAS, and integrated systems designed and deployed by certified professionals.</p><div class="folder-solutions__partners" data-folder-partners="2"></div></div>
             </article>
             <article class="folder-solutions__panel" role="tabpanel" id="folder-panel-3" aria-labelledby="folder-tab-3" data-folder-panel="3" hidden>
-              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Building-Management-System.jpeg" alt="Building Management System" loading="lazy" /></div>
+              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Building-Management-System.png" alt="Building Management System" loading="lazy" /></div>
               <div class="folder-solutions__copy"><span class="folder-solutions__eyebrow">04 / Automation</span><h2>Building Management System</h2><p>Automated control systems that optimize energy consumption through intelligent monitoring and management.</p><p>HVAC, lighting, security, and power systems unified in one adaptive platform.</p><div class="folder-solutions__partners" data-folder-partners="3"></div></div>
             </article>
             <article class="folder-solutions__panel" role="tabpanel" id="folder-panel-4" aria-labelledby="folder-tab-4" data-folder-panel="4" hidden>
-              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Managed-Support-Services.jpg" alt="Managed Support Services" loading="lazy" /></div>
+              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Managed-Support-Services.png" alt="Managed Support Services" loading="lazy" /></div>
               <div class="folder-solutions__copy"><span class="folder-solutions__eyebrow">05 / Continuity</span><h2>Managed Support Services</h2><p>Expert IT management for complex technology landscapes, from hardware maintenance to network security.</p><p>Proactive monitoring, maintenance, and responsive support keep vital systems efficient.</p><div class="folder-solutions__partners" data-folder-partners="4"></div></div>
             </article>
             <article class="folder-solutions__panel" role="tabpanel" id="folder-panel-5" aria-labelledby="folder-tab-5" data-folder-panel="5" hidden>
-              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Infrastructure-Assessment.jpg" alt="Infrastructure Assessment" loading="lazy" /></div>
+              <div class="folder-solutions__image-wrap"><img src="assets/images-zconnect/services/Infrastructure-Assessment.png" alt="Infrastructure Assessment" loading="lazy" /></div>
               <div class="folder-solutions__copy"><span class="folder-solutions__eyebrow">06 / Readiness</span><h2>Infrastructure Assessment</h2><p>Comprehensive gap analysis evaluating your infrastructure against the desired design and industry standards.</p><p>Identify vulnerabilities, plan upgrades, and make your systems future-ready.</p><div class="folder-solutions__partners" data-folder-partners="5"></div></div>
             </article>
           </div>

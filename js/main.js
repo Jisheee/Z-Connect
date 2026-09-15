@@ -310,32 +310,7 @@ $(function () {
 
   $(toTopBtn).on("click", function (e) {
     e.preventDefault();
-    initTeleportOverlay();
-
-    // Reset video time to start cleanly
-    if ($teleportVideo) {
-      $teleportVideo.currentTime = 0;
-      $teleportVideo.playbackRate = 5.0; // Smooth hardware-decoded speed
-      let playPromise = $teleportVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => { /* Video autoplay block handling */ });
-      }
-    }
-
-    // Fade in overlay smoothly, jump to top, then fade out
-    $teleportOverlay.stop(true, true).fadeIn(200, function () {
-      root.css("scroll-behavior", "auto").scrollTop(0);
-      window.scrollTo(0, 0);
-
-      setTimeout(function () {
-        $teleportOverlay.fadeOut(400, function () {
-          root.css("scroll-behavior", "smooth");
-          if ($teleportVideo) {
-            $teleportVideo.pause();
-          }
-        });
-      }, 1100);
-    });
+    root.css("scroll-behavior", "auto").stop(true, false).animate({ scrollTop: 0 }, 400, "swing");
   });
   // End Teleport To Window Top When Clicking on Back To Top Button
 
@@ -1003,12 +978,15 @@ $("#sidebar a").on("click", function (event) {
   event.preventDefault(); // Prevent default anchor behavior
   let target = $(this).attr("href");
 
-  $("html, body").animate(
-    {
-      scrollTop: $(target).offset().top
-    },
-    500 // Scroll duration in milliseconds
-  );
+  $("html, body").css("scroll-behavior", "auto").stop(true, false).animate({
+    scrollTop: $(target).offset().top
+  }, 400, "swing");
+});
+
+$("#sidebar .list-item").on("click", function (event) {
+  if (!$(event.target).closest("a").length) {
+    $(this).find("a").trigger("click");
+  }
 });
 
 /* ******* Smooth scroll to hash on page load ********/
