@@ -53,6 +53,44 @@
           </div>
         </div>
 
+        <div class="sticky-solutions__partners-stack" aria-label="Affiliated partners">
+          <div class="sticky-solutions__partners-layer is-active" data-step="0">
+            <div class="partner-logos-grid">
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Network/belden-logo.png" alt="Belden logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Network/commscope.jpg" alt="Commscope logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Network/Fiber-rex.png" alt="Fiber-Rex logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Network/legrand.png" alt="Legrand logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Network/Panduit.png" alt="Panduit logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Network/premium-line.png" alt="Premium Line logo" />
+            </div>
+          </div>
+          <div class="sticky-solutions__partners-layer" data-step="1">
+            <div class="partner-logos-grid">
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Datacenter/aruba.jpg" alt="Aruba logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Datacenter/CISCO.png" alt="Cisco logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Datacenter/Fortinet-Logo.png" alt="Fortinet logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Datacenter/TPLINK.jpg" alt="TPLink logo" />
+            </div>
+          </div>
+          <div class="sticky-solutions__partners-layer" data-step="2">
+            <div class="partner-logos-grid">
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/apc_by_schneider_electric_logo.png" alt="APC Schneider Electric logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/aruba.jpg" alt="Aruba logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/CISCO.png" alt="CISCO logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/cooper.png" alt="Cooper logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/Dahua-logo-1.jpg" alt="Dahua logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/Hikvision-Logo.png" alt="Hikvision logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/Honeywell-Logo.png" alt="Honeywell logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/KStarUPS.jpg" alt="KStarUPS logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Network/tiandy.png" alt="Tiandy logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/protec.jpeg" alt="Protec logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/ubiquiti.jpg" alt="Ubiquiti logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/Vertiv.png" alt="Vertiv logo" />
+              <img class="partner-logo" loading="lazy" src="assets/images-zconnect/partner-logos/Ancillary-devices/zk-teco.png" alt="ZK Teco logo" />
+            </div>
+          </div>
+        </div>
+
         
 
         <!-- CTA Button -->
