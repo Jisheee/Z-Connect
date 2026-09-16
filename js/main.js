@@ -282,62 +282,10 @@ $(function () {
     });
   }
 
-  // Start Teleport To Window Top When Clicking on Back To Top Button
-  let $teleportOverlay = null;
-  let $teleportVideo = null;
-
-  function initTeleportOverlay() {
-    if (!$teleportOverlay) {
-      $teleportOverlay = $(`
-        <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000000;z-index:999999;display:none;will-change:opacity;transform:translateZ(0);">
-          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:400px;aspect-ratio:16/9;overflow:hidden;">
-            <video src="assets/images-zconnect/index-page/Optimized-Logo-Movie-v1.webm" muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-            <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;background:radial-gradient(ellipse at center, transparent 35%, #000000 75%);"></div>
-          </div>
-        </div>
-      `);
-      $('body').append($teleportOverlay);
-      $teleportVideo = $teleportOverlay.find('video')[0];
-    }
-  }
-
-  // Pre-initialize overlay on idle so video buffers in background
-  if (typeof requestIdleCallback !== 'undefined') {
-    requestIdleCallback(initTeleportOverlay);
-  } else {
-    setTimeout(initTeleportOverlay, 1000);
-  }
-
   $(toTopBtn).on("click", function (e) {
     e.preventDefault();
-    initTeleportOverlay();
-
-    // Reset video time to start cleanly
-    if ($teleportVideo) {
-      $teleportVideo.currentTime = 0;
-      $teleportVideo.playbackRate = 5.0; // Smooth hardware-decoded speed
-      let playPromise = $teleportVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => { /* Video autoplay block handling */ });
-      }
-    }
-
-    // Fade in overlay smoothly, jump to top, then fade out
-    $teleportOverlay.stop(true, true).fadeIn(200, function () {
-      root.css("scroll-behavior", "auto").scrollTop(0);
-      window.scrollTo(0, 0);
-
-      setTimeout(function () {
-        $teleportOverlay.fadeOut(400, function () {
-          root.css("scroll-behavior", "smooth");
-          if ($teleportVideo) {
-            $teleportVideo.pause();
-          }
-        });
-      }, 1100);
-    });
+    window.scrollTo({ top: 0, behavior: "auto" });
   });
-  // End Teleport To Window Top When Clicking on Back To Top Button
 
   /* Start Portfolio btns  */
   if ($(".portfolio .portfolio-btn").length) {
@@ -985,16 +933,14 @@ function scrollToSidebarTarget(targetSelector) {
   const featuredImg = target.find('.featured-img-area').first();
   if (!featuredImg.length) return;
 
-  // Get the vertical position of the sidebar title "List of Services"
-  const sidebarTitle = $('.sidebar-title');
+  // Get the vertical position of the services list panel.
+  const sidebarPane = $('.service-sidebar .sidebar-pane');
   let alignmentOffset = 0;
   
-  if (sidebarTitle.length) {
-    // Get the top of the sidebar title relative to the viewport
-    const sidebarTitleRect = sidebarTitle[0].getBoundingClientRect();
-    alignmentOffset = sidebarTitleRect.top;
+  if (sidebarPane.length) {
+    alignmentOffset = sidebarPane[0].getBoundingClientRect().top;
   } else {
-    // Fallback: use nav height if sidebar title not found
+    // Fallback: use nav height if the services list is not found
     alignmentOffset = navMain.length ? navMain.innerHeight() : 0;
   }
 
@@ -1003,7 +949,7 @@ function scrollToSidebarTarget(targetSelector) {
 
   window.scrollTo({
     top: Math.max(scrollPosition, 0),
-    behavior: 'auto'
+    behavior: 'smooth'
   });
   
   // Immediately highlight the clicked button
@@ -1019,12 +965,12 @@ $(document).ready(function () {
   let sections = $("section");
   let navLinks = $("#sidebar li a");
   
-  // Get sidebar title offset once on load
-  const sidebarTitle = $('.sidebar-title');
+  // Get the services list offset once on load
+  const sidebarPane = $('.service-sidebar .sidebar-pane');
   let alignmentOffset = 0;
   
-  if (sidebarTitle.length) {
-    alignmentOffset = sidebarTitle[0].getBoundingClientRect().top;
+  if (sidebarPane.length) {
+    alignmentOffset = sidebarPane[0].getBoundingClientRect().top;
   }
 
   $(window).on("scroll", function () {
@@ -1034,7 +980,7 @@ $(document).ready(function () {
       const featuredImg = $(this).find('.featured-img-area').first();
       if (!featuredImg.length) return;
       
-      // Align with sidebar title position
+      // Align with the services list panel
       let top = featuredImg.offset().top - alignmentOffset;
       let bottom = top + $(this).outerHeight();
 
@@ -1048,14 +994,7 @@ $(document).ready(function () {
 
 $("#sidebar a").on("click", function (event) {
   event.preventDefault(); // Prevent default anchor behavior
-  let target = $(this).attr("href");
-
-  $("html, body").animate(
-    {
-      scrollTop: $(target).offset().top
-    },
-    500 // Scroll duration in milliseconds
-  );
+  scrollToSidebarTarget($(this).attr("href"));
 });
 
 /* ******* Smooth scroll to hash on page load ********/

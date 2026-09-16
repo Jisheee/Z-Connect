@@ -143,6 +143,7 @@ $padding-for-hero-section: $link-height;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: $link-height;
     padding: 0;
 
 	
@@ -151,7 +152,7 @@ $padding-for-hero-section: $link-height;
     }
   }
   .menu-wrapper {
-    margin-#{$end-direction}: auto;
+    margin-#{$end-direction}: 0;
     margin-#{$start-direction}: auto;
     &.links-at-end {
       margin-#{$start-direction}: auto;
@@ -261,14 +262,37 @@ $padding-for-hero-section: $link-height;
     line-height: $link-height;
     padding: 0;
     @include ma-transition(all, 0.3s);
-    @extend %active-item-indecator;
 
     &.active,
     &:hover {
       color: $clr-main;
-      &::before {
-        scale: 1;
+    }
+
+    > .nav-label {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        #{$start-direction}: 0;
+        #{$end-direction}: 0;
+        bottom: -3px;
+        height: 2px;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transform-origin: #{$start-direction} center;
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.25s ease, opacity 0.25s ease;
       }
+    }
+
+    &.active > .nav-label::after,
+    &:hover > .nav-label::after {
+      transform: scaleX(1);
+      opacity: 1;
     }
 
     @include screen-lg {

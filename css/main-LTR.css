@@ -1812,6 +1812,7 @@ body.rounded-btns .read-more {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 90px;
   padding: 0;
 }
 @media (max-width: 1199px) {
@@ -1931,11 +1932,31 @@ body.rounded-btns .read-more {
   padding: 0;
   transition: all 0.3s ease-in-out 0s;
 }
+.header-basic .menu-link > .nav-label {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+.header-basic .menu-link > .nav-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
 .header-basic .menu-link.active, .header-basic .menu-link:hover {
   color: var(--clr-main);
 }
-.header-basic .menu-link.active::before, .header-basic .menu-link:hover::before {
-  scale: 1;
+.header-basic .menu-link.active > .nav-label::after, .header-basic .menu-link:hover > .nav-label::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 @media (max-width: 1199px) {
   .header-basic .menu-link {
