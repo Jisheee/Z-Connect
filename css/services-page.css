@@ -8,8 +8,12 @@
   --services-page: #f4f7fb;
 }
 
+.services-page-hero {
+  padding-top: 90px;
+}
+
 .services-intro {
-  padding: 72px 0 42px;
+  padding: 48px 0 42px;
   background: var(--services-page);
 }
 
@@ -220,7 +224,7 @@
 
 @media (max-width: 991px) {
   .services-intro {
-    padding: 52px 0 28px;
+    padding: 36px 0 28px;
   }
 
   .services-intro__row {

@@ -50,7 +50,7 @@
     <!--End Page Header-->
     
         <!-- Start inner Page hero-->
-    <section class="page-hero inner-page-hero" id="page-hero">
+    <section class="page-hero inner-page-hero services-page-hero" id="page-hero">
       <div class="overlay-photo-image-bg parallax" data-bg-img="assets/images/hero/inner-page-hero.jpg" data-bg-opacity="1"></div>
       <div class="overlay-color" data-bg-opacity=".75"></div>
       <div class="container">
