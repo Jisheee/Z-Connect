@@ -1174,6 +1174,9 @@ body.rounded-btns .read-more {
   transform: translateY(50%);
   font-size: 0.85rem;
   color: var(--clr-danger);
+  background-color: var(--clr-white);
+  padding: 0 0.25rem;
+  z-index: 1;
   display: none;
 }
 .custom-form-area .done-msg {
