@@ -33,9 +33,8 @@
         <div class="col-12 col-lg-7 d-flex align-items-center order-0 order-lg-1 about-col wow fadeInUp" data-wow-delay="0.2s">
           <div class="img-area custom-grow-area about-story-visual" data-tilt>
             <div class="image">
-              <img class="about-img img-fluid force-large-img" loading="lazy" src="assets/images-zconnect/logo/RJEN LOGO.jpg" alt="Our vision">
+              <img class="about-img img-fluid force-large-img" loading="lazy" src="assets/images-zconnect/logo/New Logo.jpg" alt="Z-Connect logo">
             </div>
-            <span class="about-visual-label">Built on trust</span>
           </div>
         </div>
 
