@@ -8,12 +8,8 @@
   --services-page: #f4f7fb;
 }
 
-.services-page-hero {
-  padding-top: 90px;
-}
-
 .services-intro {
-  padding: 48px 0 42px;
+  padding: 72px 0 42px;
   background: var(--services-page);
 }
 
@@ -161,7 +157,7 @@
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.08);
   opacity: 1;
-  transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 
 .services-detail .service-sidebar .sidebar-pane .list-item:last-child {
@@ -191,15 +187,13 @@
   font-weight: 600;
   line-height: 1.3;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .services-detail .service-sidebar .sidebar-pane .list-item a .icon {
   margin-left: auto;
-  translate: 6px 0;
+  translate: 0;
   color: #8ee4ff;
   opacity: 0;
-  transition: translate 0.3s ease, opacity 0.3s ease;
 }
 
 .services-detail .service-sidebar .sidebar-pane .list-item:hover,
@@ -207,24 +201,17 @@
   border-color: rgba(142, 228, 255, 0.55);
   background: rgba(255, 255, 255, 0.18);
   transform: translateX(4px);
-  box-shadow: 0 8px 18px rgba(4, 24, 48, 0.18);
 }
 
 .services-detail .service-sidebar .sidebar-pane .list-item:hover a .icon,
 .services-detail .service-sidebar .sidebar-pane .list-item.active a .icon {
-  translate: 0 0;
+  translate: 0;
   opacity: 1;
-}
-
-.services-detail .service-sidebar .sidebar-pane .list-item a:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: -4px;
-  border-radius: 8px;
 }
 
 @media (max-width: 991px) {
   .services-intro {
-    padding: 36px 0 28px;
+    padding: 52px 0 28px;
   }
 
   .services-intro__row {

@@ -129,15 +129,17 @@ EOD;
                         'message' => 'Thank you! Your message has been sent. You will receive a confirmation email shortly.'
                     );
                 } else {
+                    error_log('CONTACT_FORM_SMTP_FAILED: ' . $adminResult['message']);
                     $response = array(
                         'success' => false,
-                        'message' => 'Server error: ' . $adminResult['message']
+                        'message' => 'SMTP send failed: ' . $adminResult['message']
                     );
                 }
             } catch (Exception $e) {
+                error_log('CONTACT_FORM_EXCEPTION: ' . $e->getMessage());
                 $response = array(
                     'success' => false,
-                    'message' => 'Error: ' . $e->getMessage()
+                    'message' => 'Exception: ' . $e->getMessage()
                 );
             }
         }

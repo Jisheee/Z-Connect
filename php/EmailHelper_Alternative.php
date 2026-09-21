@@ -39,8 +39,16 @@ class EmailHelperAlternative {
             }
             $this->lastError = $result['message'];
 
-            // Method 3: Queue email for backup
-            return $this->queueEmail($toEmail, $toName, $subject, $htmlBody, $attachmentPath);
+            // Method 3: A queued message is not a sent message.
+            // On this machine, localhost mail is not configured, so we must report failure honestly.
+            $this->queueEmail($toEmail, $toName, $subject, $htmlBody, $attachmentPath);
+
+            return array(
+                'success' => false,
+                'message' => 'Email not sent. SMTP and PHP mail() both failed. ' .
+                    ($this->lastError ?: 'No valid mail server is configured on this machine.') .
+                    ' The message was only queued locally for review.'
+            );
 
         } catch (Exception $e) {
             return array(
@@ -82,6 +90,11 @@ class EmailHelperAlternative {
             if (strpos($response, '220') !== 0) {
                 fclose($socket);
                 return array('success' => false, 'message' => 'STARTTLS unavailable');
+            }
+
+            if (!extension_loaded('openssl')) {
+                fclose($socket);
+                return array('success' => false, 'message' => 'PHP OpenSSL extension is disabled; enable it in php.ini to use Gmail SMTP TLS.');
             }
 
             // Enable TLS
@@ -392,6 +405,12 @@ EOD;
                     return $result;
                 }
                 $this->lastError = $result['message'];
+
+                // Do not fall back to PHP mail(), which uses localhost:25 on Windows.
+                return array(
+                    'success' => false,
+                    'message' => 'Gmail SMTP failed: ' . $this->lastError
+                );
             }
 
             // Method 2: Use PHP mail() with inline image
@@ -400,8 +419,11 @@ EOD;
                 return $result;
             }
 
-            // Fallback to regular send
-            return $this->send($toEmail, $toName, $subject, $htmlBody, '', $attachmentPath);
+            $this->lastError = $result['message'];
+            return array(
+                'success' => false,
+                'message' => 'Email not sent: ' . ($this->lastError ?: 'SMTP and PHP mail() failed')
+            );
 
         } catch (Exception $e) {
             return array(
@@ -421,14 +443,14 @@ EOD;
             if (!$socket) {
                 return array(
                     'success' => false,
-                    'message' => 'Cannot connect to Gmail SMTP'
+                    'message' => 'Cannot connect to Gmail SMTP: ' . $errstr . ' (' . $errno . ')'
                 );
             }
 
             $response = fgets($socket, 1024);
             if (strpos($response, '220') !== 0) {
                 fclose($socket);
-                return array('success' => false, 'message' => 'SMTP not ready');
+                return array('success' => false, 'message' => 'Gmail SMTP welcome failed: ' . trim($response));
             }
 
             fwrite($socket, "EHLO localhost\r\n");
@@ -436,6 +458,16 @@ EOD;
 
             fwrite($socket, "STARTTLS\r\n");
             $response = fgets($socket, 1024);
+
+            if (strpos($response, '220') !== 0) {
+                fclose($socket);
+                return array('success' => false, 'message' => 'Gmail STARTTLS rejected: ' . trim($response));
+            }
+
+            if (!extension_loaded('openssl')) {
+                fclose($socket);
+                return array('success' => false, 'message' => 'PHP OpenSSL extension is disabled; enable it in php.ini to use Gmail SMTP TLS.');
+            }
 
             stream_context_set_option($socket, 'ssl', 'allow_self_signed', true);
             stream_context_set_option($socket, 'ssl', 'verify_peer', false);
@@ -459,7 +491,7 @@ EOD;
 
             if (strpos($response, '235') !== 0) {
                 fclose($socket);
-                return array('success' => false, 'message' => 'Authentication failed');
+                return array('success' => false, 'message' => 'Gmail authentication failed: ' . trim($response));
             }
 
             fwrite($socket, "MAIL FROM:<" . $this->fromEmail . ">\r\n");

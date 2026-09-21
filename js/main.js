@@ -411,11 +411,36 @@ $(function () {
   // Initialize Contact Modal Popup dynamically
   let contactModal = null;
   let contactModalContent = null;
+  let contactConfirmModal = null;
+  let contactLoadingModal = null;
   function initContactModalPopup() {
     if (!contactModal && document.body) {
       contactModal = document.createElement('div');
       contactModal.className = 'modal-backdrop-contact';
       document.body.appendChild(contactModal);
+
+      contactConfirmModal = document.createElement('div');
+      contactConfirmModal.className = 'modal-content-popup-contact contact-confirm-modal';
+      contactConfirmModal.innerHTML = `
+        <span class="contact-modal-icon bi bi-send-check" aria-hidden="true"></span>
+        <h2>Send this message?</h2>
+        <p>Please confirm that you want to submit your message to Z-Connect.</p>
+        <div class="contact-modal-actions">
+          <button class="modal-cancel-btn-contact" type="button">Cancel</button>
+          <button class="modal-confirm-btn-contact" type="button">Proceed</button>
+        </div>
+      `;
+      document.body.appendChild(contactConfirmModal);
+
+      contactLoadingModal = document.createElement('div');
+      contactLoadingModal.className = 'modal-content-popup-contact contact-loading-modal';
+      contactLoadingModal.setAttribute('aria-live', 'polite');
+      contactLoadingModal.innerHTML = `
+        <span class="contact-loading-spinner" aria-hidden="true"></span>
+        <h2>Sending your message...</h2>
+        <p>Please wait while we submit your message. Do not close this window.</p>
+      `;
+      document.body.appendChild(contactLoadingModal);
       
       contactModalContent = document.createElement('div');
       contactModalContent.className = 'modal-content-popup-contact';
@@ -430,11 +455,34 @@ $(function () {
 
   window.showContactModalPopup = function() {
     initContactModalPopup();
+    contactConfirmModal.classList.remove('show');
+    contactLoadingModal.classList.remove('show');
     if (contactModal && contactModalContent) {
       contactModal.classList.add('show');
       contactModalContent.classList.add('show');
     }
   };
+
+  function showContactConfirmation() {
+    initContactModalPopup();
+    contactModal.classList.add('show');
+    contactConfirmModal.classList.add('show');
+  }
+
+  function showContactLoading() {
+    contactConfirmModal.classList.remove('show');
+    contactLoadingModal.classList.add('show');
+  }
+
+  function hideContactModal() {
+    contactModal.classList.remove('show');
+    contactConfirmModal.classList.remove('show');
+    contactLoadingModal.classList.remove('show');
+  }
+
+  $(document).on('click', '.modal-cancel-btn-contact', function () {
+    hideContactModal();
+  });
 
   submitBtn.on("click", function (e) {
     e.preventDefault();
@@ -446,6 +494,15 @@ $(function () {
     validateEmailInput(userEmail);
 
     if (isValidInput && isValidEmail) {
+      showContactConfirmation();
+      return false;
+    }
+  });
+
+  $(document).on('click', '.modal-confirm-btn-contact', function () {
+    showContactLoading();
+    submitBtn.prop('disabled', true);
+
       $.ajax({
         type: "POST",
         url: contactForm.attr("action"),
@@ -459,6 +516,7 @@ $(function () {
             showContactModalPopup();
             contactForm[0].reset();
           } else {
+            hideContactModal();
             doneMsg
               .text(response.message || "Error sending message. Please try again.")
               .css("color", "#dc3545")
@@ -470,20 +528,40 @@ $(function () {
           }
         },
 
-        error: function () {
+        error: function (xhr, status, errorThrown) {
           const doneMsg = $(".done-msg");
+          hideContactModal();
+          let errorMessage = "Error sending message. Please try again later.";
+
+          if (xhr && xhr.responseText) {
+            try {
+              const parsed = JSON.parse(xhr.responseText);
+              if (parsed && parsed.message) {
+                errorMessage = parsed.message;
+              } else {
+                errorMessage = xhr.responseText;
+              }
+            } catch (e) {
+              errorMessage = xhr.responseText;
+            }
+          } else if (errorThrown) {
+            errorMessage = errorThrown;
+          }
+
           doneMsg
-            .text("Error sending message. Please try again later.")
+            .text(errorMessage)
             .css("color", "#dc3545")
             .addClass("show");
 
           setTimeout(function () {
             doneMsg.text("").removeClass("show").css("color", "");
-          }, 4000);
+          }, 6000);
+        },
+        complete: function () {
+          submitBtn.prop('disabled', false);
         }
       });
       return false;
-    }
   });
 
   /*************End Contact Form Functionality************/

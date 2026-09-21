@@ -119,15 +119,15 @@
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.folder-solutions__tab { background: #0d496f; }
-.folder-solutions__tab:nth-child(2) { background: #105777; }
-.folder-solutions__tab:nth-child(3) { background: #176272; }
-.folder-solutions__tab:nth-child(4) { background: #1b6967; }
-.folder-solutions__tab:nth-child(5) { background: #226c5a; }
-.folder-solutions__tab:nth-child(6) { background: #296d4d; }
+.folder-solutions__tab { background: #1073ac; }
+.folder-solutions__tab:nth-child(2) { background: #168a9c; }
+.folder-solutions__tab:nth-child(3) { background: #2f7d72; }
+.folder-solutions__tab:nth-child(4) { background: #426a9f; }
+.folder-solutions__tab:nth-child(5) { background: #32558c; }
+.folder-solutions__tab:nth-child(6) { background: #1f6f8b; }
 .folder-solutions__tab:hover,
-.folder-solutions__tab:focus-visible { filter: brightness(1.08); outline: none; transform: translateX(6px); }
-.folder-solutions__tab.is-active { transform: translateX(18px); filter: brightness(1.1); }
+.folder-solutions__tab:focus-visible { filter: brightness(1.15); outline: none; transform: translateX(6px); }
+.folder-solutions__tab.is-active { transform: translateX(18px); filter: brightness(1.18); }
 .folder-solutions__tab span { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; opacity: 0.75; }
 .folder-solutions__tab strong { font-size: 15px; font-weight: 600; }
 
@@ -158,14 +158,12 @@
 .folder-solutions__partners .partner-logo { max-width: 64px; max-height: 32px; }
 @keyframes folder-panel-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-.sticky-solutions__body { display: none !important; }
-
-/* --- Two-column body ---
+/* --- Two-column body --- */
 .sticky-solutions__body {
   display: flex;
   position: relative;
-  
-} */
+  /* NO overflow here either */
+}
 
 /* LEFT: Sticky media column
    - JS handles the sticky behavior (position:fixed toggle)
