@@ -1710,13 +1710,15 @@ body.rounded-btns .read-more {
 .header-basic .has-sub-menu > .sub-menu .sub-menu-link::before, .header-basic .menu-link::before {
   content: "";
   position: absolute;
-  left: -12px;
-  width: 6px;
-  aspect-ratio: 1/1;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  height: 2px;
   background-color: var(--clr-main);
-  scale: 0;
-  border-radius: 50%;
-  transition: all 0.2s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 999px;
 }
 
 .content-always-light.header-basic .menu-link, .is-sticky.header-basic .menu-link {
@@ -1938,7 +1940,7 @@ body.rounded-btns .read-more {
   color: var(--clr-main);
 }
 .header-basic .menu-link.active::before, .header-basic .menu-link:hover::before {
-  scale: 1;
+  transform: scaleX(1);
 }
 @media (max-width: 1199px) {
   .header-basic .menu-link {
