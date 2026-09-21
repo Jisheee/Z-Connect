@@ -102,13 +102,9 @@
 
           <div class="contact-info-block">
             <div class="meta-tabs">
-              <span class="meta-item office-tooltip" data-tooltip="Block 32 Lot 2 Jasmin Street, T.S. Cruz Subdivision, Almanza II, Las Piñas City, 1751 Philippines.">Office Address</span>
+              <span class="meta-item">Office Address</span>
               <span class="meta-divider"></span>
-              <span class="meta-item email-tooltip" data-tooltip="HR: hr-ms@zconnect.ph&#10;SALES: web-sales@zconnect.ph">Email</span>
-              <span class="meta-divider"></span>
-              <span class="meta-item phone-tooltip" data-tooltip="PHONE: 8403-0774">Phone</span>
-              <span class="meta-divider"></span>
-              <span class="meta-item mail-tooltip" data-tooltip="MAIL: zconnect.ph">Mail</span>
+              <span class="meta-item office-address">Block 32 Lot 2 Jasmin Street, T.S. Cruz Subdivision, Almanza II, Las Piñas City, 1751 Philippines.</span>
             </div>
 
             <div class="map-card">
