@@ -677,39 +677,62 @@ EOD;
     /**
      * Send application confirmation
      */
-    public function sendApplicationConfirmation($userEmail, $userName, $position) {
+    public function sendApplicationConfirmation($userEmail, $userName, $position, $logoPath = null) {
+        if (!$logoPath) {
+            $logoPath = '../assets/images-zconnect/logo/z-connect-circle-logo.png';
+        }
+
         $htmlBody = <<<EOD
 <html>
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: 'Jost', sans-serif; color: #333; line-height: 1.6; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
-    .header { background-color: #28a745; color: white; padding: 20px; border-radius: 8px 8px 0 0; text-align: center; }
-    .content { padding: 20px; background-color: #ffffff; }
-    .footer { background-color: #f9f9f9; padding: 20px; border-radius: 0 0 8px 8px; text-align: center; font-size: 12px; color: #666; }
+    body { font-family: 'Jost', sans-serif; color: #333; background-color: #f5f5f5; margin: 0; padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .logo-section { background-color: #f9f9f9; padding: 30px 20px; text-align: center; border-bottom: none; }
+    .logo-section img { max-width: 150px; height: auto; border-radius: 50%; }
+    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #28a745; }
+    .content { padding: 30px 20px; }
+    .greeting { color: #333; font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+    .highlight { color: #28a745; font-weight: 700; }
+    .footer { background-color: #f9f9f9; padding: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #666; }
+    .footer p { margin: 5px 0; }
+    .contact-info { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; font-size: 13px; }
+    .contact-info p { margin: 5px 0; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>Z-Connect</h1>
-      <p>Thank You for Applying!</p>
+    <div class="logo-section">
+      <img src="cid:z_connect_logo" alt="Z-Connect Logo" role="img" aria-label="Z-Connect Logo" style="border: 0 !important; display: block !important; margin: 0 auto !important; padding: 0 !important; pointer-events: none !important; user-select: none !important; -webkit-user-select: none !important; -moz-user-select: none !important; ms-user-select: none !important; outline: none !important; cursor: default !important; max-width: 150px !important; height: auto !important; -webkit-touch-callout: none !important; -webkit-user-drag: none !important; position: relative !important; z-index: 0 !important;" onmousedown="return false" oncontextmenu="return false" />
+    </div>
+    <div class="title-section">
+      <h3 style="margin: 0; color: #28a745; font-size: 24px; font-weight: 700; text-align: center;">Application Received</h3>
     </div>
     <div class="content">
-      <p>Dear $userName,</p>
-      <p>Thank you for applying for the <span style="color: #28a745; font-weight: bold;">$position</span> position!</p>
-      <p>We have received your application and resume. Our HR team will review and contact you within the next week.</p>
-      <p><strong>Questions?</strong><br> hr-ms@zconnect.ph</p>
+      <div class="greeting">
+        <p>Dear <strong>$userName</strong>,</p>
+        <p>Thank you for applying for the <span class="highlight">$position</span> position at <span class="highlight">Z-Connect</span>.</p>
+        <p>We have successfully received your application and resume. Our recruitment team will carefully review your qualifications and experience.</p>
+        <div class="contact-info">
+          <p><strong>Questions or need help?</strong></p>
+          <p><a href="mailto:hr-ms@zconnect.ph" style="color: #28a745; text-decoration: none;">hr-ms@zconnect.ph</a></p>
+        </div>
+      </div>
     </div>
     <div class="footer">
-      <p>© 2024 Z-Connect</p>
+      <p>© 2024 Z-Connect. All rights reserved.</p>
     </div>
   </div>
 </body>
 </html>
 EOD;
-        return $this->send($userEmail, $userName, 'Application Received - ' . $position, $htmlBody);
+
+        if (file_exists($logoPath)) {
+            return $this->sendWithInlineImage($userEmail, $userName, 'Application Received - Z-Connect', $htmlBody, $logoPath, 'z_connect_logo');
+        }
+
+        return $this->send($userEmail, $userName, 'Application Received - Z-Connect', $htmlBody);
     }
 }
 ?>

@@ -184,8 +184,8 @@ EOD;
                 );
 
                 if ($adminResult['success']) {
-                    // Send confirmation email to applicant
-                    $confirmResult = $emailHelper->sendApplicationConfirmation($email, $fullName, $position);
+                    // Send confirmation email to applicant using the same inline-logo flow as contact us
+                    $confirmResult = $emailHelper->sendApplicationConfirmation($email, $fullName, $position, $logoPath);
                     
                     $response = array(
                         'success' => true,
@@ -197,8 +197,8 @@ EOD;
                         @unlink($filePath);
                     }
                 } else {
-                    // Even if admin email fails, send confirmation to applicant
-                    $emailHelper->sendApplicationConfirmation($email, $fullName, $position);
+                    // Even if admin email fails, still send the applicant confirmation using the contact-style email template
+                    $emailHelper->sendApplicationConfirmation($email, $fullName, $position, $logoPath);
                     
                     $response = array(
                         'success' => true,
