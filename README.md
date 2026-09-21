@@ -1,35 +1,131 @@
-Create .env on root folder and copy/paste the .env.example onto it. Don't forget to replace credentials into the correct emails.
+# Project Setup
 
-Download and install php SMTP for email handling. Refer to the following:
+## 1. Create the `.env` File
 
-To be run at powershell (run as admin)
-  winget install --id PHP.PHP -e
+In the project's **root folder**, create a `.env` file by copying the provided `.env.example`.
 
-Close powershell and rerun as admin
-  php -v
-  php --ini  
+Replace the placeholder credentials with the correct email credentials.
 
-  Get-Command php
+> **Important:** Do not commit the `.env` file to GitHub, as it may contain sensitive credentials.
 
-  C:\PHP\php-8.5.9-nts-Win32-vs17-x64\php.exe
+---
 
-  cd C:\PHP\php-8.5.9-nts-Win32-vs17-x64
+## 2. Install PHP
 
-  Get-ChildItem php.ini*
+PHP is required for SMTP email handling.
 
-  Copy-Item php.ini-development php.ini
+Open **PowerShell as Administrator** and run:
 
-  notepad php.ini
+```powershell
+winget install --id PHP.PHP -e
+```
 
-Find these lines in Notepad:
-  ;extension_dir = "ext"
-  ;extension=openssl
+After the installation is complete, **close PowerShell** and open a new PowerShell window **as Administrator**.
 
-Change them to:
-  extension_dir = "ext"
-  extension=openssl
+Verify the PHP installation:
 
-  php --ini
+```powershell
+php -v
+php --ini
+```
 
-  php -m | Select-String openssl
-  php -r "echo extension_loaded('openssl') ? 'OpenSSL enabled' : 'OpenSSL disabled';"
+Check where PHP is installed:
+
+```powershell
+Get-Command php
+```
+
+The PHP executable should be located somewhere similar to:
+
+```text
+C:\PHP\php-8.5.9-nts-Win32-vs17-x64\php.exe
+```
+
+---
+
+## 3. Configure PHP
+
+Navigate to the PHP installation directory:
+
+```powershell
+cd C:\PHP\php-8.5.9-nts-Win32-vs17-x64
+```
+
+Check the available PHP configuration files:
+
+```powershell
+Get-ChildItem php.ini*
+```
+
+Create the `php.ini` configuration file from the development template:
+
+```powershell
+Copy-Item php.ini-development php.ini
+```
+
+Open the configuration file:
+
+```powershell
+notepad php.ini
+```
+
+### Enable OpenSSL
+
+In `php.ini`, find the following lines:
+
+```ini
+;extension_dir = "ext"
+;extension=openssl
+```
+
+Remove the `;` at the beginning of each line:
+
+```ini
+extension_dir = "ext"
+extension=openssl
+```
+
+Save the file and close Notepad.
+
+---
+
+## 4. Verify the PHP Configuration
+
+Check which `php.ini` PHP is using:
+
+```powershell
+php --ini
+```
+
+Verify that OpenSSL is enabled:
+
+```powershell
+php -m | Select-String openssl
+```
+
+You can also verify it directly:
+
+```powershell
+php -r "echo extension_loaded('openssl') ? 'OpenSSL enabled' : 'OpenSSL disabled';"
+```
+
+If everything is configured correctly, the output should be:
+
+```text
+OpenSSL enabled
+```
+
+---
+
+## Setup Checklist
+
+Before running the application, make sure:
+
+- [ ] `.env` has been created in the project root.
+- [ ] `.env` contains the correct email credentials.
+- [ ] PHP has been installed.
+- [ ] `php -v` successfully returns the PHP version.
+- [ ] `php.ini` has been created.
+- [ ] `extension_dir = "ext"` is enabled.
+- [ ] `extension=openssl` is enabled.
+- [ ] OpenSSL verification returns `OpenSSL enabled`.
