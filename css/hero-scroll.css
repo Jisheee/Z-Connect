@@ -229,11 +229,80 @@
 
 /* Mobile Fixes for Panel 4 */
 @media (max-width: 768px) {
+  html,
+  body {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .hero-scroll-container,
+  .pin-wrap,
+  .media-column,
+  .text-column {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sticky-solutions,
+  .sticky-solutions__container,
+  .folder-solutions {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .text-column,
+  .scroll-panels {
+    overflow: hidden;
+  }
+
+  .scroll-panel .hero-text-area {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .scroll-panel .slide-title,
+  .scroll-panel .slide-subtitle {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .scroll-panel .hero-text-box {
+    padding: 1rem;
+  }
+
+  .scroll-panel .logo-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  .scroll-panel .hero-social-icons .sc-list {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
   .panel-4 .hero-text-area {
-    padding: 0 15px; /* Less padding so text fits */
+    padding: 0 15px 24px; /* Keep the mobile CTA away from the panel edge */
     width: 95%;
     margin-left: 2.5%;
     margin-right: 2.5%;
+  }
+
+  .scroll-panel .cta-links-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .panel-4 .slide-title {
@@ -278,5 +347,18 @@
 
   .text-column {
     background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 360px) {
+  .scroll-panel .slide-title {
+    font-size: clamp(1.05rem, 8vw, 1.5rem) !important;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .scroll-panel .slide-subtitle {
+    font-size: clamp(0.72rem, 3.5vw, 0.9rem) !important;
+    line-height: 1.4;
   }
 }

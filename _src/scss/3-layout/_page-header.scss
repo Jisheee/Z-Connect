@@ -272,13 +272,26 @@ $padding-for-hero-section: $link-height;
     }
 
     @include screen-lg {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: stretch;
-      width: 100%;
+      justify-content: flex-start;
+      width: auto;
       padding: 0.75rem 1rem 0.75rem 0;
       color: $clr-main;
       line-height: calc(#{$link-height} / 2);
+
+      &::before {
+        display: none;
+      }
+
+      &.active,
+      &:hover {
+        .nav-label {
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 0.35rem;
+        }
+      }
     }
 
     .plus-icon {

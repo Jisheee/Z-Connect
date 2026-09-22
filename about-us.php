@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&amp;display=swap">
         
         <!-- main-LTR -->
-        <link rel="stylesheet" href="css/main-LTR.css?v=2">
+        <link rel="stylesheet" href="css/main-LTR.css?v=10">
         <title>Z-Connect   |   About Us</title>
   </head>
   <body>

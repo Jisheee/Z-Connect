@@ -608,3 +608,23 @@
     padding: 14px 24px;
   }
 }
+
+@media (max-width: 360px) {
+  .folder-solutions__tab {
+    padding: 8px 6px;
+  }
+
+  .folder-solutions__tab span {
+    font-size: 8px;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .folder-solutions__tab strong {
+    font-size: 9px;
+    line-height: 1.25;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
