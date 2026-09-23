@@ -24,82 +24,121 @@
                 </div>
 
                 <div class="job-openings-grid">
-                  
-                  <!-- Box 1 -->
+
+                  <!-- Box 1: Admin (6 Jobs) -->
                   <div class="job-opening-card wow fadeInUp" data-wow-delay=".1s">
-                    <div class="job-card-header">
-                      <span class="job-type-badge">Full-Time</span>
-                      <span class="job-dept">Engineering</span>
-                    </div>
-                    <h4 class="job-title">Network &amp; Structured Cabling Engineer</h4>
-                    <p class="job-desc">Design, install, and optimize structured copper and fiber cabling infrastructure for commercial towers and enterprise data centers.</p>
-                    <div class="job-card-footer">
-                      <a href="application.php?position=Network+%26+Structured+Cabling+Engineer" class="job-apply-link">Apply Now <i class="bi bi-arrow-right"></i></a>
+                    <div class="job-card-front-content">
+                      <h4 class="job-title">Admin Department</h4>
+                      <p class="job-desc">Ensure smooth daily operations, manage finances, and provide essential administrative support across the organization.</p>
+                      <div class="job-card-footer mt-auto position-relative">
+                        <button class="job-apply-link view-jobs-btn no-borders bg-transparent p-0 w-100 text-start" type="button">
+                          View Jobs <i class="bi bi-chevron-down transition-icon ms-1 float-end"></i>
+                        </button>
+                        
+                        <div class="jobs-dropdown-menu">
+                          <a href="application.php?position=Admin%2FFinance+Manager" class="job-role-pill">Admin/Finance Manager <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Liaison+Officer%2FAccounting+Staff" class="job-role-pill">Liaison/Accounting <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Accounting+Staff" class="job-role-pill">Accounting Staff <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Field+Collection+Officer" class="job-role-pill">Field Collection Officer <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Purchasing+Officer" class="job-role-pill">Purchasing Officer <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Purchasing%2FLogistics" class="job-role-pill">Purchasing/Logistics <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- Box 2 -->
+                  <!-- Box 2: HR (5 Jobs) -->
                   <div class="job-opening-card wow fadeInUp" data-wow-delay=".15s">
-                    <div class="job-card-header">
-                      <span class="job-type-badge">Full-Time</span>
-                      <span class="job-dept">Automation</span>
-                    </div>
-                    <h4 class="job-title">BMS &amp; Automation Specialist</h4>
-                    <p class="job-desc">Deploy smart building controls, sensor telemetry systems, and integration protocols for efficient facility management.</p>
-                    <div class="job-card-footer">
-                      <a href="application.php?position=BMS+%26+Automation+Specialist" class="job-apply-link">Apply Now <i class="bi bi-arrow-right"></i></a>
+                    <div class="job-card-front-content">
+                      <h4 class="job-title">HR Department</h4>
+                      <p class="job-desc">Nurture our company culture, manage talent acquisition, and support the development of our growing team.</p>
+                      <div class="job-card-footer mt-auto position-relative">
+                        <button class="job-apply-link view-jobs-btn no-borders bg-transparent p-0 w-100 text-start" type="button">
+                          View Jobs <i class="bi bi-chevron-down transition-icon ms-1 float-end"></i>
+                        </button>
+                        
+                        <div class="jobs-dropdown-menu">
+                          <a href="application.php?position=HR+Manager" class="job-role-pill">HR Manager <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=HRIS+Manager" class="job-role-pill">HRIS Manager <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Benefits+Officer%2FResource+Manager" class="job-role-pill">Benefits Officer <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Recruitment+Officer" class="job-role-pill">Recruitment Officer <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=HR+Associate" class="job-role-pill">HR Associate <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- Box 3 -->
+                  <!-- Box 3: Documentation (4 Jobs) -->
                   <div class="job-opening-card wow fadeInUp" data-wow-delay=".2s">
-                    <div class="job-card-header">
-                      <span class="job-type-badge">Full-Time</span>
-                      <span class="job-dept">IT Infrastructure</span>
-                    </div>
-                    <h4 class="job-title">Systems &amp; Cloud Administrator</h4>
-                    <p class="job-desc">Maintain enterprise server clusters, virtualization platforms, Active Directory environments, and secure cloud backups.</p>
-                    <div class="job-card-footer">
-                      <a href="application.php?position=Systems+%26+Cloud+Administrator" class="job-apply-link">Apply Now <i class="bi bi-arrow-right"></i></a>
+                    <div class="job-card-front-content">
+                      <h4 class="job-title">Documentation Department</h4>
+                      <p class="job-desc">Maintain accurate technical records, manage logistics, and support our teams with precise documentation.</p>
+                      <div class="job-card-footer mt-auto position-relative">
+                        <button class="job-apply-link view-jobs-btn no-borders bg-transparent p-0 w-100 text-start" type="button">
+                          View Jobs <i class="bi bi-chevron-down transition-icon ms-1 float-end"></i>
+                        </button>
+                        
+                        <div class="jobs-dropdown-menu">
+                          <a href="application.php?position=Technical+Drafter" class="job-role-pill">Technical Drafter <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Warehouse+Personnel" class="job-role-pill">Warehouse Personnel <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Driver" class="job-role-pill">Driver <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Utility" class="job-role-pill">Utility <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- Box 4 -->
+                  <!-- Box 4: Sales (3 Jobs) -->
                   <div class="job-opening-card wow fadeInUp" data-wow-delay=".25s">
-                    <div class="job-card-header">
-                      <span class="job-type-badge">Full-Time</span>
-                      <span class="job-dept">IT Support</span>
-                    </div>
-                    <h4 class="job-title">Technical Support Specialist (Tier 2)</h4>
-                    <p class="job-desc">Provide rapid client technical assistance, hardware diagnostics, networking configurations, and hands-on system troubleshooting.</p>
-                    <div class="job-card-footer">
-                      <a href="application.php?position=Technical+Support+Specialist" class="job-apply-link">Apply Now <i class="bi bi-arrow-right"></i></a>
+                    <div class="job-card-front-content">
+                      <h4 class="job-title">Sales Department</h4>
+                      <p class="job-desc">Drive growth and build lasting client relationships by connecting businesses with our innovative IT solutions.</p>
+                      <div class="job-card-footer mt-auto position-relative">
+                        <button class="job-apply-link view-jobs-btn no-borders bg-transparent p-0 w-100 text-start" type="button">
+                          View Jobs <i class="bi bi-chevron-down transition-icon ms-1 float-end"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="jobs-dropdown-menu">
+                          <a href="application.php?position=Sr.+Account+Manager" class="job-role-pill">Sr. Account Manager <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Account+Manager" class="job-role-pill">Account Manager <i class="bi bi-arrow-right"></i></a>
+                          <a href="application.php?position=Sales+Consultant" class="job-role-pill">Sales Consultant <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- Box 5 -->
+                  <!-- Box 5: Technical (1 Job) -->
                   <div class="job-opening-card wow fadeInUp" data-wow-delay=".3s">
-                    <div class="job-card-header">
-                      <span class="job-type-badge">Full-Time</span>
-                      <span class="job-dept">Field Operations</span>
-                    </div>
-                    <h4 class="job-title">Fiber Optic &amp; Telecom Technician</h4>
-                    <p class="job-desc">Perform precision fusion splicing, OTDR link testing, cable pathway routing, and carrier-grade rack integration on site.</p>
-                    <div class="job-card-footer">
-                      <a href="application.php?position=Fiber+Optic+%26+Telecom+Technician" class="job-apply-link">Apply Now <i class="bi bi-arrow-right"></i></a>
+                    <div class="job-card-front-content">
+                      <h4 class="job-title">Technical Department</h4>
+                      <p class="job-desc">Lead complex IT projects, oversee technical deployments, and ensure seamless delivery of infrastructure services.</p>
+                      <div class="job-card-footer mt-auto position-relative">
+                        <button class="job-apply-link view-jobs-btn no-borders bg-transparent p-0 w-100 text-start" type="button">
+                          View Jobs <i class="bi bi-chevron-down transition-icon ms-1 float-end"></i>
+                        </button>
+                        
+                        <div class="jobs-dropdown-menu">
+                          <a href="application.php?position=Project+Manager" class="job-role-pill">Project Manager <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- Box 6 -->
+                  <!-- Box 6: Network (1 Job) -->
                   <div class="job-opening-card wow fadeInUp" data-wow-delay=".35s">
-                    <div class="job-card-header">
-                      <span class="job-type-badge">Full-Time</span>
-                      <span class="job-dept">Project Management</span>
-                    </div>
-                    <h4 class="job-title">IT Project Operations Coordinator</h4>
-                    <p class="job-desc">Coordinate deployment milestones, field engineering schedules, equipment logistics, and client deliverable reporting.</p>
-                    <div class="job-card-footer">
-                      <a href="application.php?position=IT+Project+Operations+Coordinator" class="job-apply-link">Apply Now <i class="bi bi-arrow-right"></i></a>
+                    <div class="job-card-front-content">
+                      <h4 class="job-title">Network Department</h4>
+                      <p class="job-desc">Design, implement, and maintain robust network architectures and structured cabling systems for our clients.</p>
+                      <div class="job-card-footer mt-auto position-relative">
+                        <button class="job-apply-link view-jobs-btn no-borders bg-transparent p-0 w-100 text-start" type="button">
+                          View Jobs <i class="bi bi-chevron-down transition-icon ms-1 float-end"></i>
+                        </button>
+                        
+                        <div class="jobs-dropdown-menu">
+                          <a href="application.php?position=Network+Engineer" class="job-role-pill">Network Engineer <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -188,3 +227,38 @@
 
       </div>
     </section>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("click", function(e) {
+        const viewJobsBtn = e.target.closest(".view-jobs-btn");
+        if (viewJobsBtn) {
+            e.preventDefault();
+            const card = viewJobsBtn.closest(".job-opening-card");
+            const wasOpen = card.classList.contains("show-dropdown");
+            
+            // Close all others
+            document.querySelectorAll(".job-opening-card.show-dropdown").forEach(c => {
+                c.classList.remove("show-dropdown");
+            });
+            
+            // Toggle clicked one
+            if (!wasOpen) {
+                card.classList.add("show-dropdown");
+            }
+            return;
+        }
+        
+        // Handle click outside
+        const clickedInsideDropdown = e.target.closest(".jobs-dropdown-menu");
+        if (!clickedInsideDropdown) {
+            document.querySelectorAll(".job-opening-card.show-dropdown").forEach(c => {
+                c.classList.remove("show-dropdown");
+            });
+        }
+    });
+});
+</script>
