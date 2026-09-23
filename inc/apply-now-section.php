@@ -5,7 +5,7 @@
         <div class="career-impact-banner wow fadeInUp" data-wow-delay=".2s">
           <div class="banner-content">
             <span class="banner-badge">JOIN OUR TEAM</span>
-            <h2 class="banner-title">Explore Opportunities</h2>
+            <h2 class="banner-title">Ready to Make an Impact?</h2>
             <p class="banner-desc">We're looking for passionate individuals to build innovative IT solutions and grow with us. Explore our open opportunities below or get in touch to start your journey.</p>
           </div>
         </div>
@@ -113,7 +113,7 @@
                 
                 <div class="feature-card-header">
                   <span class="feature-pretitle">CAREER PATHWAYS</span>
-                  <h3 class="feature-title">Why Work With Us &amp; What You Can Expect</h3>
+                  <h3 class="feature-title">Why Work With Us &amp; How It Works</h3>
                   <p class="feature-lead">
                     At Z-Connect, we bring together passionate builders, network specialists, and IT professionals to power critical technological infrastructure.
                   </p>

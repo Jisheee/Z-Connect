@@ -33,7 +33,6 @@
         
         <!-- Careers Section -->
         <link rel="stylesheet" href="css/careers-section.css?v=1">
-        <link rel="stylesheet" href="css/careers-section.css?v=2">
         <title> Z-Connect   |   Contact Us</title>
   </head>
   <body>

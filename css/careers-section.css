@@ -5,109 +5,9 @@
 .apply-now {
   padding: 80px 0 100px;
   background: #ffffff;
-/* Full-Width Hero Banner: Ready to Make an Impact (Frameless / No Box) */
-.career-impact-banner-fullwidth {
-  position: relative;
-  width: 100%;
-  background-color: #286fed;
-  background-image: url('../assets/images-zconnect/careers/ready-to-impact-banner.png');
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: cover;
-  padding: 85px 0;
-  margin-bottom: 0;
-  overflow: hidden;
 }
 
 /* Top Hero Banner: Ready to Make an Impact */
-.career-impact-banner-fullwidth::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(40, 111, 237, 0.98) 0%,
-    rgba(40, 111, 237, 0.92) 50%,
-    rgba(40, 111, 237, 0.25) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-@media (min-width: 992px) {
-  .career-impact-banner-fullwidth::before {
-    background: linear-gradient(
-      90deg,
-      rgba(40, 111, 237, 0.98) 0%,
-      rgba(40, 111, 237, 0.92) 42%,
-      rgba(40, 111, 237, 0) 65%
-    );
-  }
-}
-
-.career-impact-banner-fullwidth .banner-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  color: #ffffff;
-}
-
-.career-impact-banner-fullwidth .banner-content .banner-badge {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #ffffff;
-  padding: 6px 16px;
-  border-radius: 50px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-}
-
-.career-impact-banner-fullwidth .banner-content .banner-title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.2;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 767px) {
-  .career-impact-banner-fullwidth {
-    padding: 60px 0;
-  }
-  .career-impact-banner-fullwidth .banner-content .banner-title {
-    font-size: 2.1rem;
-  }
-}
-
-@media (max-width: 575px) {
-  .career-impact-banner-fullwidth {
-    padding: 45px 0;
-  }
-  .career-impact-banner-fullwidth .banner-content .banner-title {
-    font-size: 1.7rem;
-  }
-}
-
-.career-impact-banner-fullwidth .banner-content .banner-desc {
-  font-size: 1.15rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 0;
-}
-
-@media (max-width: 767px) {
-  .career-impact-banner-fullwidth .banner-content .banner-desc {
-    font-size: 0.98rem;
-  }
-}
-
-/* Also support in-container card style as alternate */
 .apply-now .career-impact-banner {
   position: relative;
   background-color: #286fed;
@@ -204,12 +104,6 @@
   .apply-now .career-impact-banner .banner-content .banner-desc {
     font-size: 0.95rem;
   }
-}
-
-/* Base section container */
-.apply-now {
-  padding: 70px 0 100px;
-  background: #ffffff;
 }
 
 /* Openings Column (First Column) */
@@ -516,7 +410,6 @@
 @media (max-width: 991px) {
   .apply-now {
     padding: 60px 0 80px;
-    padding: 50px 0 70px;
   }
 
   .apply-now .career-impact-banner {
@@ -536,7 +429,6 @@
 @media (max-width: 575px) {
   .apply-now {
     padding: 50px 0 70px;
-    padding: 40px 0 60px;
   }
 
   .apply-now .career-impact-banner {
