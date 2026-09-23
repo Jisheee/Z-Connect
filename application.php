@@ -265,6 +265,27 @@
     
     <script>
       const form = document.getElementById('applicationForm');
+
+      // Auto-select position from URL query parameter
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const posParam = urlParams.get('position');
+        if (posParam) {
+          const selectElem = document.getElementById('position');
+          if (selectElem) {
+            for (let i = 0; i < selectElem.options.length; i++) {
+              const optVal = selectElem.options[i].value.toLowerCase();
+              const targetVal = posParam.toLowerCase();
+              if (optVal && (optVal.includes(targetVal) || targetVal.includes(optVal))) {
+                selectElem.selectedIndex = i;
+                break;
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Could not auto-select position:', e);
+      }
       
       // Modal elements
       const modal = document.createElement('div');

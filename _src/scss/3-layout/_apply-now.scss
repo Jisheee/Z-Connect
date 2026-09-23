@@ -1,268 +1,433 @@
 .apply-now {
-  padding: 100px 0;
+  padding: 80px 0 100px;
   background: $clr-white;
 
-  .sec-heading {
-    margin-bottom: 60px;
+  // Top Impact Banner with Artwork
+  .career-impact-banner {
+    position: relative;
+    background-color: #286fed;
+    background-image: url('../assets/images-zconnect/careers/ready-to-impact-banner.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(39, 111, 237, 0.2);
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
 
-    .pre-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: $clr-main;
-    }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(40, 111, 237, 0.98) 0%,
+        rgba(40, 111, 237, 0.92) 50%,
+        rgba(40, 111, 237, 0.25) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
 
-    .title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin: 15px 0;
-      color: $clr-dark-blue;
-
-      @include screen-sm {
-        font-size: 2rem;
+      @media (min-width: 992px) {
+        background: linear-gradient(
+          90deg,
+          rgba(40, 111, 237, 0.98) 0%,
+          rgba(40, 111, 237, 0.92) 42%,
+          rgba(40, 111, 237, 0) 65%
+        );
       }
     }
 
-    .desc {
-      font-size: 1.1rem;
-      color: rgba($clr-dark-blue-rgb, 0.75);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-  }
-
-  .apply-info-section {
-    margin-bottom: 70px;
-
-    &:last-of-type {
-      margin-bottom: 70px;
-    }
-  }
-
-  .apply-info-heading {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 35px;
-
-    .info-icon {
-      flex: 0 0 auto;
-      font-size: 3.4rem;
-      line-height: 1;
-      color: $clr-main;
-    }
-
-    .item-title {
-      margin: 0;
-      color: $clr-dark-blue;
-      font-size: 2.1rem;
-      font-weight: 700;
-    }
-  }
-
-  .puzzle-row {
-    display: flex;
-    gap: 18px;
-    align-items: stretch;
-    padding: 16px 15px;
-    background: $clr-white;
-    border: 1px solid rgba($clr-main-rgb, 0.1);
-    border-radius: 12px;
-  }
-
-  .puzzle-item {
-    --puzzle-color: #0b4f86;
-    position: relative;
-    display: flex;
-    flex: 1 1 0;
-    min-width: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    color: $clr-main;
-    text-align: center;
-
-    &:nth-child(2) { --puzzle-color: #1769a5; }
-    &:nth-child(3) { --puzzle-color: #2785bd; }
-    &:nth-child(4) { --puzzle-color: #4aa4d1; }
-    &:nth-child(5) { --puzzle-color: #79c4e3; }
-
-    strong {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      font-size: 1.05rem;
-      line-height: 1.25;
-    }
-
-    .puzzle-card {
+    .banner-content {
       position: relative;
-      z-index: 1;
-      display: flex;
-      width: 100%;
-      min-height: 250px;
-      flex: 1 1 auto;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 24px;
-      overflow: visible;
+      z-index: 2;
+      padding: 50px 48px;
+      max-width: 600px;
+      color: #ffffff;
+
+      .banner-badge {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        color: #ffffff;
+        padding: 6px 16px;
+        border-radius: 50px;
+        margin-bottom: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .banner-title {
+        font-size: 2.6rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #ffffff;
+        margin-bottom: 16px;
+
+        @include screen-sm {
+          font-size: 2rem;
+        }
+
+        @include screen-xs {
+          font-size: 1.7rem;
+        }
+      }
+
+      .banner-desc {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.92);
+        margin-bottom: 0;
+
+        @include screen-sm {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  // Openings Column (First Column)
+  .openings-column-wrapper {
+    .openings-header {
+      .openings-pretitle {
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: $clr-main;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .openings-title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: $clr-dark-blue;
+        margin-bottom: 8px;
+
+        @include screen-sm {
+          font-size: 1.7rem;
+        }
+      }
+
+      .openings-subtitle {
+        font-size: 1rem;
+        color: rgba($clr-dark-blue-rgb, 0.7);
+        margin-bottom: 0;
+      }
+    }
+
+    .job-openings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+      @include screen-xs {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .job-opening-card {
+      background: #ffffff;
+      border: 1px solid rgba($clr-main-rgb, 0.15);
       border-radius: 14px;
-      background: var(--puzzle-color);
-      box-shadow: 0 8px 18px rgba(13, 34, 90, 0.16);
-      color: $clr-white;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 18px rgba(6, 9, 34, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
       &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 14px 26px rgba(13, 34, 90, 0.24);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba($clr-main-rgb, 0.15);
+        border-color: rgba($clr-main-rgb, 0.45);
       }
 
-      &::before,
-      &::after {
-        position: absolute;
-        z-index: 0;
-        width: 17px;
-        height: 34px;
-        content: "";
+      .job-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+
+        .job-type-badge {
+          font-size: 0.75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          color: $clr-main;
+          background: rgba($clr-main-rgb, 0.1);
+          padding: 4px 10px;
+          border-radius: 6px;
+        }
+
+        .job-dept {
+          font-size: 0.8rem;
+          color: rgba($clr-dark-blue-rgb, 0.55);
+          font-weight: 600;
+        }
       }
 
-      &::before {
-        top: 50%;
-        right: -17px;
-        border-radius: 0 17px 17px 0;
-        background: var(--puzzle-color);
-        transform: translateY(-50%);
+      .job-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: $clr-dark-blue;
+        margin-bottom: 10px;
+        line-height: 1.35;
       }
 
-      &::after {
-        top: 50%;
-        left: 0;
-        border-radius: 0 17px 17px 0;
-        background: $clr-white;
-        box-shadow: inset -3px 0 0 rgba(13, 34, 90, 0.04);
-        transform: translateY(-50%);
+      .job-desc {
+        font-size: 0.92rem;
+        color: rgba($clr-dark-blue-rgb, 0.72);
+        line-height: 1.55;
+        margin-bottom: 18px;
+        flex-grow: 1;
       }
 
-      .icon {
-        position: relative;
-        z-index: 1;
+      .job-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-top: 14px;
+        border-top: 1px dashed rgba($clr-main-rgb, 0.14);
+
+        .job-apply-link {
+          font-size: 0.9rem;
+          font-weight: 700;
+          color: $clr-main;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          text-decoration: none;
+          transition: gap 0.2s ease, color 0.2s ease;
+
+          i {
+            font-size: 0.95rem;
+            transition: transform 0.2s ease;
+          }
+
+          &:hover {
+            color: $clr-dark-blue;
+
+            i {
+              transform: translateX(4px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Feature Column (Second Column)
+  .careers-feature-card {
+    background: linear-gradient(160deg, #ffffff 0%, #f6faff 100%);
+    border: 1px solid rgba($clr-main-rgb, 0.18);
+    border-radius: 16px;
+    padding: 36px 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 32px rgba($clr-main-rgb, 0.08);
+
+    .feature-card-header {
+      margin-bottom: 22px;
+
+      .feature-pretitle {
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: $clr-main;
+        margin-bottom: 8px;
         display: block;
-        margin-bottom: 22px;
-        font-size: 3.5rem;
-        line-height: 1;
       }
 
-      p {
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        font-size: 1.05rem;
-        line-height: 1.5;
-      }
-    }
+      .feature-title {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: $clr-dark-blue;
+        line-height: 1.3;
+        margin-bottom: 12px;
 
-    &:first-child .puzzle-card::after,
-    &:last-child .puzzle-card::before {
-      display: none;
-    }
-
-    &.label-bottom {
-      flex-direction: column-reverse;
-    }
-  }
-
-  .apply-cta-area {
-    padding: 40px;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, rgba($clr-main-rgb, 0.1) 0%, rgba($clr-main-rgb, 0.05) 100%);
-    border-radius: 8px;
-    border: 2px dashed rgba($clr-main-rgb, 0.3);
-
-    .apply-subtitle {
-      font-size: 1.1rem;
-      color: rgba($clr-dark-blue-rgb, 0.8);
-      font-weight: 500;
-    }
-
-    .btn-solid {
-      padding: 15px 40px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 4px;
-    }
-  }
-
-  @include screen-sm {
-    padding: 60px 0;
-
-    .apply-cta-area {
-      padding: 30px;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .apply-now {
-    .sec-heading {
-      .title {
-        font-size: 1.8rem;
+        @include screen-sm {
+          font-size: 1.5rem;
+        }
       }
 
-      .desc {
-        font-size: 0.95rem;
+      .feature-lead {
+        font-size: 0.96rem;
+        color: rgba($clr-dark-blue-rgb, 0.75);
+        line-height: 1.6;
+        margin-bottom: 0;
       }
     }
 
-    .apply-info-section { margin-bottom: 50px; }
-
-    .apply-info-heading {
-      gap: 15px;
-      margin-bottom: 25px;
-
-      .info-icon { font-size: 2.7rem; }
-      .item-title { font-size: 1.7rem; }
-    }
-
-    .puzzle-row {
+    .feature-highlights-list {
+      display: flex;
       flex-direction: column;
-      gap: 20px;
-      padding: 12px;
-    }
+      gap: 16px;
+      margin-bottom: 26px;
+      flex-grow: 1;
 
-    .puzzle-item {
-      gap: 10px;
+      .feature-highlight-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 14px 16px;
+        background: #ffffff;
+        border-radius: 12px;
+        border: 1px solid rgba($clr-main-rgb, 0.1);
+        box-shadow: 0 2px 10px rgba(6, 9, 34, 0.03);
 
-      .puzzle-card {
-        min-height: 190px;
-        padding: 28px 24px;
-
-        &::before {
-          top: auto;
-          width: 34px;
-          height: 17px;
-          right: 50%;
-          bottom: -17px;
-          border-radius: 0 0 17px 17px;
-          transform: translateX(50%);
+        .highlight-icon {
+          flex-shrink: 0;
+          width: 44px;
+          height: 44px;
+          border-radius: 10px;
+          background: linear-gradient(135deg, rgba($clr-main-rgb, 0.12) 0%, rgba($clr-main-rgb, 0.22) 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $clr-main;
+          font-size: 1.4rem;
         }
 
-        &::after {
-          width: 34px;
-          height: 17px;
-          top: -17px;
-          left: 50%;
-          border-radius: 17px 17px 0 0;
-          transform: translateX(-50%);
+        .highlight-body {
+          .highlight-title {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: $clr-dark-blue;
+            margin-bottom: 4px;
+          }
+
+          .highlight-desc {
+            font-size: 0.88rem;
+            color: rgba($clr-dark-blue-rgb, 0.7);
+            line-height: 1.5;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .process-steps-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border: 1px solid rgba($clr-main-rgb, 0.12);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 26px;
+
+      .step-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .step-number {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: $clr-main;
+          color: #ffffff;
+          font-size: 0.75rem;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .step-label {
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: $clr-dark-blue;
         }
       }
 
-      &:first-child .puzzle-card::after,
-      &:last-child .puzzle-card::before { display: none; }
+      .step-connector {
+        flex: 1;
+        height: 2px;
+        background: rgba($clr-main-rgb, 0.2);
+        margin: 0 10px;
+      }
+    }
+
+    .feature-card-footer {
+      text-align: center;
+      margin-top: auto;
+
+      .footer-note {
+        font-size: 0.92rem;
+        color: rgba($clr-dark-blue-rgb, 0.65);
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+
+      .btn-solid {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 28px;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 8px;
+        background-color: $clr-main;
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba($clr-main-rgb, 0.28);
+
+        &:hover {
+          background-color: $clr-dark-blue;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba($clr-main-rgb, 0.35);
+        }
+      }
+    }
+  }
+
+  // Responsive Tweaks
+  @include screen-md {
+    padding: 60px 0 80px;
+
+    .career-impact-banner {
+      min-height: 280px;
+      margin-bottom: 40px;
+
+      .banner-content {
+        padding: 40px 30px;
+      }
+    }
+
+    .careers-feature-card {
+      margin-top: 20px;
+    }
+  }
+
+  @include screen-xs {
+    padding: 50px 0 70px;
+
+    .career-impact-banner {
+      border-radius: 14px;
+
+      .banner-content {
+        padding: 30px 20px;
+
+        .banner-title {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .careers-feature-card {
+      padding: 26px 18px;
     }
   }
 }

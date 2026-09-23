@@ -1,0 +1,558 @@
+/* ==========================================================================
+   Careers & Application Section Styles (Combined Layout)
+   ========================================================================== */
+
+.apply-now {
+  padding: 80px 0 100px;
+  background: #ffffff;
+/* Full-Width Hero Banner: Ready to Make an Impact (Frameless / No Box) */
+.career-impact-banner-fullwidth {
+  position: relative;
+  width: 100%;
+  background-color: #286fed;
+  background-image: url('../assets/images-zconnect/careers/ready-to-impact-banner.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  padding: 85px 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+/* Top Hero Banner: Ready to Make an Impact */
+.career-impact-banner-fullwidth::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 111, 237, 0.98) 0%,
+    rgba(40, 111, 237, 0.92) 50%,
+    rgba(40, 111, 237, 0.25) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (min-width: 992px) {
+  .career-impact-banner-fullwidth::before {
+    background: linear-gradient(
+      90deg,
+      rgba(40, 111, 237, 0.98) 0%,
+      rgba(40, 111, 237, 0.92) 42%,
+      rgba(40, 111, 237, 0) 65%
+    );
+  }
+}
+
+.career-impact-banner-fullwidth .banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  color: #ffffff;
+}
+
+.career-impact-banner-fullwidth .banner-content .banner-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.career-impact-banner-fullwidth .banner-content .banner-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .career-impact-banner-fullwidth {
+    padding: 60px 0;
+  }
+  .career-impact-banner-fullwidth .banner-content .banner-title {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .career-impact-banner-fullwidth {
+    padding: 45px 0;
+  }
+  .career-impact-banner-fullwidth .banner-content .banner-title {
+    font-size: 1.7rem;
+  }
+}
+
+.career-impact-banner-fullwidth .banner-content .banner-desc {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .career-impact-banner-fullwidth .banner-content .banner-desc {
+    font-size: 0.98rem;
+  }
+}
+
+/* Also support in-container card style as alternate */
+.apply-now .career-impact-banner {
+  position: relative;
+  background-color: #286fed;
+  background-image: url('../assets/images-zconnect/careers/ready-to-impact-banner.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(39, 111, 237, 0.2);
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.apply-now .career-impact-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 111, 237, 0.98) 0%,
+    rgba(40, 111, 237, 0.92) 50%,
+    rgba(40, 111, 237, 0.25) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (min-width: 992px) {
+  .apply-now .career-impact-banner::before {
+    background: linear-gradient(
+      90deg,
+      rgba(40, 111, 237, 0.98) 0%,
+      rgba(40, 111, 237, 0.92) 42%,
+      rgba(40, 111, 237, 0) 65%
+    );
+  }
+}
+
+.apply-now .career-impact-banner .banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 50px 48px;
+  max-width: 600px;
+  color: #ffffff;
+}
+
+.apply-now .career-impact-banner .banner-content .banner-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.apply-now .career-impact-banner .banner-content .banner-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .apply-now .career-impact-banner .banner-content .banner-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .apply-now .career-impact-banner .banner-content .banner-title {
+    font-size: 1.7rem;
+  }
+}
+
+.apply-now .career-impact-banner .banner-content .banner-desc {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .apply-now .career-impact-banner .banner-content .banner-desc {
+    font-size: 0.95rem;
+  }
+}
+
+/* Base section container */
+.apply-now {
+  padding: 70px 0 100px;
+  background: #ffffff;
+}
+
+/* Openings Column (First Column) */
+.apply-now .openings-column-wrapper .openings-header .openings-pretitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1073ac;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.apply-now .openings-column-wrapper .openings-header .openings-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #060922;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767px) {
+  .apply-now .openings-column-wrapper .openings-header .openings-title {
+    font-size: 1.7rem;
+  }
+}
+
+.apply-now .openings-column-wrapper .openings-header .openings-subtitle {
+  font-size: 1rem;
+  color: rgba(6, 9, 34, 0.7);
+  margin-bottom: 0;
+}
+
+.apply-now .openings-column-wrapper .job-openings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 575px) {
+  .apply-now .openings-column-wrapper .job-openings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.apply-now .openings-column-wrapper .job-opening-card {
+  background: #ffffff;
+  border: 1px solid rgba(16, 115, 172, 0.15);
+  border-radius: 14px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 18px rgba(6, 9, 34, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(16, 115, 172, 0.15);
+  border-color: rgba(16, 115, 172, 0.45);
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-header .job-type-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1073ac;
+  background: rgba(16, 115, 172, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-header .job-dept {
+  font-size: 0.8rem;
+  color: rgba(6, 9, 34, 0.55);
+  font-weight: 600;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #060922;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-desc {
+  font-size: 0.92rem;
+  color: rgba(6, 9, 34, 0.72);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(16, 115, 172, 0.14);
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-footer .job-apply-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1073ac;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-footer .job-apply-link i {
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-footer .job-apply-link:hover {
+  color: #060922;
+}
+
+.apply-now .openings-column-wrapper .job-opening-card .job-card-footer .job-apply-link:hover i {
+  transform: translateX(4px);
+}
+
+/* Feature Column (Second Column) */
+.apply-now .careers-feature-card {
+  background: linear-gradient(160deg, #ffffff 0%, #f6faff 100%);
+  border: 1px solid rgba(16, 115, 172, 0.18);
+  border-radius: 16px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 32px rgba(16, 115, 172, 0.08);
+}
+
+.apply-now .careers-feature-card .feature-card-header {
+  margin-bottom: 22px;
+}
+
+.apply-now .careers-feature-card .feature-card-header .feature-pretitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1073ac;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.apply-now .careers-feature-card .feature-card-header .feature-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #060922;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .apply-now .careers-feature-card .feature-card-header .feature-title {
+    font-size: 1.5rem;
+  }
+}
+
+.apply-now .careers-feature-card .feature-card-header .feature-lead {
+  font-size: 0.96rem;
+  color: rgba(6, 9, 34, 0.75);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.apply-now .careers-feature-card .feature-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 26px;
+  flex-grow: 1;
+}
+
+.apply-now .careers-feature-card .feature-highlights-list .feature-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 115, 172, 0.1);
+  box-shadow: 0 2px 10px rgba(6, 9, 34, 0.03);
+}
+
+.apply-now .careers-feature-card .feature-highlights-list .feature-highlight-item .highlight-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(16, 115, 172, 0.12) 0%, rgba(16, 115, 172, 0.22) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1073ac;
+  font-size: 1.4rem;
+}
+
+.apply-now .careers-feature-card .feature-highlights-list .feature-highlight-item .highlight-body .highlight-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #060922;
+  margin-bottom: 4px;
+}
+
+.apply-now .careers-feature-card .feature-highlights-list .feature-highlight-item .highlight-body .highlight-desc {
+  font-size: 0.88rem;
+  color: rgba(6, 9, 34, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.apply-now .careers-feature-card .process-steps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid rgba(16, 115, 172, 0.12);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 26px;
+}
+
+.apply-now .careers-feature-card .process-steps-bar .step-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apply-now .careers-feature-card .process-steps-bar .step-pill .step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1073ac;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-now .careers-feature-card .process-steps-bar .step-pill .step-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #060922;
+}
+
+.apply-now .careers-feature-card .process-steps-bar .step-connector {
+  flex: 1;
+  height: 2px;
+  background: rgba(16, 115, 172, 0.2);
+  margin: 0 10px;
+}
+
+.apply-now .careers-feature-card .feature-card-footer {
+  text-align: center;
+  margin-top: auto;
+}
+
+.apply-now .careers-feature-card .feature-card-footer .footer-note {
+  font-size: 0.92rem;
+  color: rgba(6, 9, 34, 0.65);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.apply-now .careers-feature-card .feature-card-footer .btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: #1073ac;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(16, 115, 172, 0.28);
+}
+
+.apply-now .careers-feature-card .feature-card-footer .btn-solid:hover {
+  background-color: #060922;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 115, 172, 0.35);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 991px) {
+  .apply-now {
+    padding: 60px 0 80px;
+    padding: 50px 0 70px;
+  }
+
+  .apply-now .career-impact-banner {
+    min-height: 280px;
+    margin-bottom: 40px;
+  }
+
+  .apply-now .career-impact-banner .banner-content {
+    padding: 40px 30px;
+  }
+
+  .apply-now .careers-feature-card {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .apply-now {
+    padding: 50px 0 70px;
+    padding: 40px 0 60px;
+  }
+
+  .apply-now .career-impact-banner {
+    border-radius: 14px;
+  }
+
+  .apply-now .career-impact-banner .banner-content {
+    padding: 30px 20px;
+  }
+
+  .apply-now .career-impact-banner .banner-content .banner-title {
+    font-size: 1.6rem;
+  }
+
+  .apply-now .careers-feature-card {
+    padding: 26px 18px;
+  }
+}
+

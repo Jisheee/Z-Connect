@@ -40,7 +40,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&amp;display=swap">
         
         <!-- main-LTR -->
-        <link rel="stylesheet" href="css/main-LTR.css?v=10">
+        <link rel="stylesheet" href="css/main-LTR.css?v=11">
         
         <!-- Sticky Solutions (Cipher-style scroll section) -->
         <link rel="stylesheet" href="css/sticky-solutions.css?v=2">
@@ -172,7 +172,7 @@
     <!-- End take-action Section -->
 
     <!-- Start Apply-Now Section -->
-    <?php include('inc/apply-now-section.php');?>
+    <?php // include('inc/apply-now-section.php');?> 
     <!-- End Apply-Now Section -->
 
     <!-- Start  page-footer Section-->
