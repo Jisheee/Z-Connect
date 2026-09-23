@@ -40,6 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             );
         } else {
             try {
+                date_default_timezone_set('Asia/Manila');
+                $submittedOn = date('F j, Y \a\t g:i A');
+
                 // Prepare email to admin
                 $adminHtmlBody = <<<EOD
 <html>
@@ -49,13 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     .container { max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .logo-section { background-color: #f9f9f9; padding: 30px 20px; text-align: center; border-bottom: none; }
     .logo-section img { max-width: 150px; height: auto; border-radius: 50%; }
-    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #007bff; }
+    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #1073ac; }
     .content { padding: 30px 20px; }
     .field { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
     .field:last-of-type { border-bottom: none; margin-bottom: 0; }
-    .label { font-weight: 700; color: #007bff; display: block; margin-bottom: 5px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .label { font-weight: 700; color: #1073ac; display: block; margin-bottom: 5px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
     .value { color: #333; font-size: 14px; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; }
-    .value a { color: #007bff; text-decoration: none; }
+    .value a { color: #1073ac; text-decoration: none; }
     .value a:hover { text-decoration: underline; }
     .footer { background-color: #f9f9f9; padding: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #666; }
     .footer p { margin: 5px 0; }
@@ -67,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <img src="cid:z_connect_logo" alt="Z-Connect Logo" role="img" aria-label="Z-Connect Logo" style="border: 0 !important; display: block !important; margin: 0 auto !important; padding: 0 !important; pointer-events: none !important; user-select: none !important; -webkit-user-select: none !important; -moz-user-select: none !important; ms-user-select: none !important; outline: none !important; cursor: default !important; max-width: 150px !important; height: auto !important; -webkit-touch-callout: none !important; -webkit-user-drag: none !important; position: relative !important; z-index: 0 !important;" onmousedown="return false" oncontextmenu="return false" />
     </div>
     <div class="title-section">
-      <h3 style="margin: 0; color: #007bff; font-size: 24px; font-weight: 700; text-align: center;">New Contact Form Submission</h3>
+      <h3 style="margin: 0; color: #1073ac; font-size: 24px; font-weight: 700; text-align: center;">New Contact Form Submission</h3>
     </div>
     <div class="content">
       <div class="field">
@@ -90,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="footer">
       <p><strong>Message Submission Details</strong></p>
       <p>Submitted on: " . date('F j, Y \\a\\t g:i A') . "</p>
+      <p>Submitted on: $submittedOn</p>
       <p style="color: #999; font-size: 11px; margin-top: 15px;">This is an automated email from Z-Connect contact form.</p>
     </div>
   </div>
@@ -153,6 +157,3 @@ EOD;
 
 echo json_encode($response);
 ?>
-
-
-

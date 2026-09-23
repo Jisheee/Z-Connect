@@ -104,13 +104,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     .container { max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .logo-section { background-color: #f9f9f9; padding: 30px 20px; text-align: center; border-bottom: none; }
     .logo-section img { max-width: 150px; height: auto; border-radius: 50%; }
-    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #28a745; }
+    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #1073ac; }
     .content { padding: 30px 20px; }
     .field { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
     .field:last-of-type { border-bottom: none; margin-bottom: 0; }
-    .label { font-weight: 700; color: #28a745; display: block; margin-bottom: 5px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .label { font-weight: 700; color: #1073ac; display: block; margin-bottom: 5px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
     .value { color: #333; font-size: 14px; line-height: 1.6; }
-    .value a { color: #28a745; text-decoration: none; }
+    .value a { color: #1073ac; text-decoration: none; }
     .value a:hover { text-decoration: underline; }
     .footer { background-color: #f9f9f9; padding: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #666; }
     .footer p { margin: 5px 0; }
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <img src="cid:z_connect_logo" alt="Z-Connect Logo" role="img" aria-label="Z-Connect Logo" style="border: 0 !important; display: block !important; margin: 0 auto !important; padding: 0 !important; pointer-events: none !important; user-select: none !important; -webkit-user-select: none !important; -moz-user-select: none !important; ms-user-select: none !important; outline: none !important; cursor: default !important; max-width: 150px !important; height: auto !important; -webkit-touch-callout: none !important; -webkit-user-drag: none !important; position: relative !important; z-index: 0 !important;" onmousedown="return false" oncontextmenu="return false" />
     </div>
     <div class="title-section">
-      <h3 style="margin: 0; color: #28a745; font-size: 24px; font-weight: 700; text-align: center;">New Application Form</h3>
+      <h3 style="margin: 0; color: #1073ac; font-size: 24px; font-weight: 700; text-align: center;">New Application Form</h3>
       <p style="color: #666; font-size: 14px; margin: 8px 0 0 0; text-align: center;">Position: <strong>$position</strong></p>
     </div>
     <div class="content">
@@ -230,4 +230,3 @@ EOD;
 
 echo json_encode($response);
 ?>
-

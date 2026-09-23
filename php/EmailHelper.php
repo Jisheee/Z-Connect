@@ -344,7 +344,7 @@ EOD;
       border-radius: 8px;
     }
     .header {
-      background-color: #28a745;
+      background-color: #1073ac;
       color: white;
       padding: 20px;
       border-radius: 8px 8px 0 0;
@@ -364,16 +364,16 @@ EOD;
       border-top: 1px solid #ddd;
     }
     .highlight {
-      color: #28a745;
+      color: #1073ac;
       font-weight: bold;
     }
     .step {
       margin: 15px 0;
       padding-left: 20px;
-      border-left: 3px solid #28a745;
+      border-left: 3px solid #1073ac;
     }
     .step strong {
-      color: #28a745;
+      color: #1073ac;
     }
     p {
       margin: 10px 0;
@@ -391,7 +391,7 @@ EOD;
       <p>Thank you for applying for the <span class="highlight">$position</span> position at Z-Connect!</p>
       <p>We have successfully received your application and resume. Our recruitment team will carefully review your qualifications and experience.</p>
       
-      <h3 style="color: #28a745; margin-top: 25px;">What Happens Next:</h3>
+      <h3 style="color: #1073ac; margin-top: 25px;">What Happens Next:</h3>
       
       <div class="step">
         <strong>📋 Initial Screening (3-5 business days)</strong>
@@ -426,7 +426,7 @@ EOD;
     </div>
     <div class="footer">
       <p>© 2024 Z-Connect Inc. - Connecting Solutions</p>
-      <p><a href="https://zconnect.ph" style="color: #28a745; text-decoration: none;">https://zconnect.ph</a></p>
+      <p><a href="https://zconnect.ph" style="color: #1073ac; text-decoration: none;">https://zconnect.ph</a></p>
     </div>
   </div>
 </body>
@@ -437,4 +437,3 @@ EOD;
     }
 }
 ?>
-

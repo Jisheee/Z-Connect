@@ -967,7 +967,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Obfuscate and insert the email addresses
   emailElements.forEach(function (element) {
-    var user = element.getAttribute('data-user') || "hr-ms";
+    var user = element.getAttribute('data-user') || "sales";
     var domain = element.getAttribute('data-domain') || "zconnect.ph";
     var email = obfuscateEmail(user, domain);
     element.innerHTML = '<a class="email link" href="mailto:' + email + '">' + email + '</a>';

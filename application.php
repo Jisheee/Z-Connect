@@ -163,13 +163,15 @@
 
                   <div class="col-12">
                     <div class="form-group mb-4">
-                      <div class="form-check">
+                      <div class="form-check terms-check">
                         <input class="form-check-input" type="checkbox" id="agreeTerms" name="agreeTerms" required>
                         <label class="form-check-label" for="agreeTerms">
-                          I agree to the terms and conditions <span style="color: red;">*</span>
+                          I have read and agree to the
+                          <button type="button" class="terms-link" id="openTerms">Terms and Conditions</button>
+                          <span style="color: red;">*</span>
                         </label>
                       </div>
-                      <small class="text-danger d-none" id="termsError">You must agree to the terms and conditions</small>
+                      <small class="text-danger d-none" id="termsError">Please read and agree to the Terms and Conditions</small>
                     </div>
                   </div>
 
@@ -198,21 +200,182 @@
 
     <!-- Application Form Validation and Submission -->
     <style>
+      /* ============================================================
+         Terms & Conditions
+         ============================================================ */
+      .terms-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .terms-check .form-check-input {
+        margin-top: 0.3rem;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+
+      .terms-check .form-check-label {
+        line-height: 1.6;
+      }
+
+      .terms-link {
+        border: 0;
+        padding: 0;
+        background: none;
+        color: #1073ac;
+        font: inherit;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .terms-link:hover {
+        color: #1050ac;
+      }
+
+      .terms-modal-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.65);
+        z-index: 1060;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .terms-modal-backdrop.show {
+        display: flex;
+      }
+
+      body.terms-modal-open {
+        overflow: hidden;
+      }
+
+      .terms-modal {
+        width: min(760px, 100%);
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        text-align: left;
+        animation: termsModalIn 0.2s ease-out;
+      }
+
+      @keyframes termsModalIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .terms-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px 25px;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .terms-modal-header h2 {
+        margin: 0;
+        color: #1073ac;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .terms-modal-close {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #f1f3f5;
+        color: #555;
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .terms-modal-close:hover {
+        background: #e2e6ea;
+        color: #111;
+      }
+
+      .terms-modal-body {
+        padding: 25px;
+        overflow-y: auto;
+        color: #333;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .terms-modal-body > p:first-child {
+        margin-top: 0;
+        margin-bottom: 22px;
+      }
+
+      .terms-modal-body h3 {
+        margin: 20px 0 6px;
+        color: #1073ac;
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      .terms-modal-body p {
+        margin: 0 0 10px;
+      }
+
+      .terms-confirmation {
+        margin-top: 24px;
+        padding: 16px 18px;
+        border-left: 4px solid #1073ac;
+        background: #f5f9fc;
+        border-radius: 0 6px 6px 0;
+      }
+
+      .terms-confirmation strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #1073ac;
+      }
+
+      .terms-confirmation p {
+        margin-bottom: 0;
+      }
+
+      .terms-modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px 25px;
+        border-top: 1px solid #e9ecef;
+      }
+
+      /* ============================================================
+         Application Submission Success Modal
+         ============================================================ */
       .modal-backdrop {
         display: none;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1040;
       }
-      
+
       .modal-backdrop.show {
         display: block;
       }
-      
+
       .modal-content-popup {
         display: none;
         position: fixed;
@@ -228,27 +391,27 @@
         width: 90%;
         text-align: center;
       }
-      
+
       .modal-content-popup.show {
         display: block;
       }
-      
+
       .modal-content-popup h2 {
-        color: #28a745;
+        color: #1073ac;
         font-size: 24px;
         margin-bottom: 15px;
         margin-top: 0;
       }
-      
+
       .modal-content-popup p {
         color: #333;
         font-size: 16px;
         margin-bottom: 20px;
         line-height: 1.5;
       }
-      
+
       .modal-close-btn {
-        background-color: #28a745;
+        background-color: #1073ac;
         color: white;
         border: none;
         padding: 12px 30px;
@@ -257,9 +420,9 @@
         cursor: pointer;
         transition: background-color 0.3s;
       }
-      
+
       .modal-close-btn:hover {
-        background-color: #1e7e34;
+        background-color: #1050ac;
       }
     </style>
     
@@ -287,6 +450,87 @@
         console.warn('Could not auto-select position:', e);
       }
       
+      // ============================================================
+      // Terms & Conditions Modal
+      // ============================================================
+      const termsModalBackdrop = document.createElement('div');
+      termsModalBackdrop.className = 'terms-modal-backdrop';
+      termsModalBackdrop.innerHTML = `
+        <div class="terms-modal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle">
+          <div class="terms-modal-header">
+            <h2 id="termsModalTitle">Terms and Conditions</h2>
+            <button type="button" class="terms-modal-close" id="closeTerms" aria-label="Close Terms and Conditions">
+              &times;
+            </button>
+          </div>
+
+          <div class="terms-modal-body">
+            <p>By submitting an application through the Z-Connect website, I acknowledge and agree to the following:</p>
+
+            <h3>1. Accuracy of Information</h3>
+            <p>I confirm that the information and documents I provide are true, complete, and accurate to the best of my knowledge.</p>
+
+            <h3>2. Application Review</h3>
+            <p>I understand that submitting an application does not guarantee employment. Z-Connect Inc. reserves the right to review applications and select candidates based on the requirements and qualifications of each position.</p>
+
+            <h3>3. Use of Applicant Information</h3>
+            <p>I authorize Z-Connect Inc. to collect, use, and process the information I provide for recruitment, evaluation, communication, and other legitimate employment-related purposes.</p>
+
+            <h3>4. Confidentiality</h3>
+            <p>I understand that any information submitted during the application process may be accessed by authorized personnel involved in recruitment and hiring.</p>
+
+            <h3>5. Communication</h3>
+            <p>I agree that Z-Connect Inc. may contact me regarding my application, interview schedules, employment opportunities, or other recruitment-related matters using the contact information I provide.</p>
+
+            <h3>6. False or Misleading Information</h3>
+            <p>I understand that providing false, misleading, or fraudulent information may result in the rejection of my application or withdrawal of an employment offer.</p>
+
+            <div class="terms-confirmation">
+              <strong>Agreement</strong>
+              <p>By checking the box below, I confirm that I have read, understood, and agreed to these Terms and Conditions.</p>
+            </div>
+          </div>
+
+          <div class="terms-modal-footer">
+            <button type="button" class="modal-close-btn" id="agreeAndCloseTerms">Close</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(termsModalBackdrop);
+
+      const openTerms = document.getElementById('openTerms');
+      const closeTerms = document.getElementById('closeTerms');
+      const agreeAndCloseTerms = document.getElementById('agreeAndCloseTerms');
+
+      function openTermsModal() {
+        termsModalBackdrop.classList.add('show');
+        document.body.classList.add('terms-modal-open');
+      }
+
+      function closeTermsModal() {
+        termsModalBackdrop.classList.remove('show');
+        document.body.classList.remove('terms-modal-open');
+      }
+
+      openTerms.addEventListener('click', openTermsModal);
+      closeTerms.addEventListener('click', closeTermsModal);
+      agreeAndCloseTerms.addEventListener('click', closeTermsModal);
+
+      termsModalBackdrop.addEventListener('click', function(e) {
+        if (e.target === termsModalBackdrop) {
+          closeTermsModal();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && termsModalBackdrop.classList.contains('show')) {
+          closeTermsModal();
+        }
+      });
+
+      // ============================================================
+      // Application Submission Success Modal
+      // ============================================================
       // Modal elements
       const modal = document.createElement('div');
       modal.className = 'modal-backdrop';
