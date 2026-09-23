@@ -76,11 +76,6 @@
             <!-- Panel 1 -->
             <div class="scroll-panel panel-1">
               <div class="hero-text-area hero-text-box content-always-light">
-                <div class="hero-social-icons mb-3">
-                  <div class="sc-wrapper dir-row sc-flat">
-                    <?php include('inc/social-media-links.php');?>
-                  </div>
-                </div>
                 <img class="logo-img wow fadeInUp" data-wow-delay=".1s" src="assets/images-zconnect/logo/zconnect-rect-trans-logo.png" alt="Z-Connect logo" style="max-width: 250px; margin-bottom: 20px;" />
                 <p class="slide-subtitle">A trusted partner in the field of IT that provides quality solutions, coupled with an excellent service.</p>
                 <div class="cta-links-area">
@@ -93,11 +88,6 @@
             <!-- Panel 2 -->
             <div class="scroll-panel panel-2">
               <div class="hero-text-area hero-text-box content-always-light">
-                <div class="hero-social-icons mb-3">
-                  <div class="sc-wrapper dir-row sc-flat">
-                    <?php include('inc/social-media-links.php');?>
-                  </div>
-                </div>
                 <div class="pre-title">Structured Cabling</div>
                 <h1 class="slide-title">Network &amp; Structured Cabling <span class="featured-text">Experts </span><span class="design-element rounded-shape stripes"></span></h1>
                 <p class="slide-subtitle">Many years of structured cabling experience from towers, offices and large data centers.</p>
@@ -110,11 +100,6 @@
             <!-- Panel 3 -->
             <div class="scroll-panel panel-3">
               <div class="hero-text-area hero-text-box content-always-light">
-                <div class="hero-social-icons mb-3">
-                  <div class="sc-wrapper dir-row sc-flat">
-                    <?php include('inc/social-media-links.php');?>
-                  </div>
-                </div>
                 <h1 class="slide-title" style="font-size: 2.5rem;">Building Management Systems — <span class="featured-text">Seamless Managed Service </span><span class="design-element rounded-shape stripes"></span></h1>
                 <p class="slide-subtitle">Z-Connect Inc. provides managed IT services that ensure systems run smoothly through proactive monitoring, maintenance, and responsive support. Their reliable service helps businesses minimize downtime, boost efficiency, and focus on growth.</p>
                 <div class="cta-links-area">
@@ -158,13 +143,11 @@
         </div>
       </div>
 
-      <div class="hero-autoplay-controls" aria-label="Hero controls">
-        <div class="hero-autoplay-indicators" role="tablist" aria-label="Hero panels">
-          <button class="hero-autoplay-indicator is-active" type="button" role="tab" aria-label="Show panel 1" aria-selected="true" data-panel="0"></button>
-          <button class="hero-autoplay-indicator" type="button" role="tab" aria-label="Show panel 2" aria-selected="false" data-panel="1"></button>
-          <button class="hero-autoplay-indicator" type="button" role="tab" aria-label="Show panel 3" aria-selected="false" data-panel="2"></button>
-          <button class="hero-autoplay-indicator" type="button" role="tab" aria-label="Show panel 4" aria-selected="false" data-panel="3"></button>
-        </div>
+      <div class="hero-panel-controls" aria-label="Hero controls">
+        <button class="hero-panel-button" type="button" aria-label="Previous hero panel" data-direction="previous">
+        </button>
+        <button class="hero-panel-button" type="button" aria-label="Next hero panel" data-direction="next">
+        </button>
       </div>
     </section>
     <!-- End  Page hero-->
