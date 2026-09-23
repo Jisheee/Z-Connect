@@ -264,6 +264,21 @@
     </style>
     
     <script>
+      // Auto-fill position from URL parameter
+      document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const positionParam = urlParams.get('position');
+        
+        if (positionParam) {
+          const positionSelect = document.getElementById('position');
+          // Check if the option exists
+          const optionExists = Array.from(positionSelect.options).some(option => option.value === positionParam);
+          if (optionExists) {
+            positionSelect.value = positionParam;
+          }
+        }
+      });
+
       const form = document.getElementById('applicationForm');
       
       // Modal elements
