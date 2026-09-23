@@ -345,10 +345,10 @@ class EmailHelperAlternative {
     .container { max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .logo-section { background-color: #f9f9f9; padding: 30px 20px; text-align: center; border-bottom: none; }
     .logo-section img { max-width: 150px; height: auto; border-radius: 50%; }
-    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #007bff; }
+    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #1073ac; }
     .content { padding: 30px 20px; }
     .greeting { color: #333; font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
-    .highlight { color: #007bff; font-weight: 700; }
+    .highlight { color: #1073ac; font-weight: 700; }
     .footer { background-color: #f9f9f9; padding: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #666; }
     .footer p { margin: 5px 0; }
     .contact-info { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; font-size: 13px; }
@@ -361,7 +361,7 @@ class EmailHelperAlternative {
       <img src="cid:z_connect_logo" alt="Z-Connect Logo" role="img" aria-label="Z-Connect Logo" style="border: 0 !important; display: block !important; margin: 0 auto !important; padding: 0 !important; pointer-events: none !important; user-select: none !important; -webkit-user-select: none !important; -moz-user-select: none !important; ms-user-select: none !important; outline: none !important; cursor: default !important; max-width: 150px !important; height: auto !important; -webkit-touch-callout: none !important; -webkit-user-drag: none !important; position: relative !important; z-index: 0 !important;" onmousedown="return false" oncontextmenu="return false" />
     </div>
     <div class="title-section">
-      <h3 style="margin: 0; color: #007bff; font-size: 24px; font-weight: 700; text-align: center;">Thank You for Contacting Us!</h3>
+      <h3 style="margin: 0; color: #1073ac; font-size: 24px; font-weight: 700; text-align: center;">Thank You for Contacting Us!</h3>
     </div>
     <div class="content">
       <div class="greeting">
@@ -370,7 +370,7 @@ class EmailHelperAlternative {
         <p>Our team will review your inquiry and get back to you within <span class="highlight">24-48 hours</span>.</p>
         <div class="contact-info">
           <p><strong>Questions or need help?</strong></p>
-          <p> <a href="mailto:hr-ms@zconnect.ph" style="color: #007bff; text-decoration: none;">hr-ms@zconnect.ph</a></p>
+          <p> <a href="mailto:hr-ms@zconnect.ph" style="color: #1073ac; text-decoration: none;">hr-ms@zconnect.ph</a></p>
         </div>
       </div>
     </div>
@@ -691,10 +691,10 @@ EOD;
     .container { max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .logo-section { background-color: #f9f9f9; padding: 30px 20px; text-align: center; border-bottom: none; }
     .logo-section img { max-width: 150px; height: auto; border-radius: 50%; }
-    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #28a745; }
+    .title-section { background-color: white; padding: 20px; text-align: center; border-bottom: 2px solid #1073ac; }
     .content { padding: 30px 20px; }
     .greeting { color: #333; font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
-    .highlight { color: #28a745; font-weight: 700; }
+    .highlight { color: #1073ac; font-weight: 700; }
     .footer { background-color: #f9f9f9; padding: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #666; }
     .footer p { margin: 5px 0; }
     .contact-info { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; font-size: 13px; }
@@ -707,7 +707,7 @@ EOD;
       <img src="cid:z_connect_logo" alt="Z-Connect Logo" role="img" aria-label="Z-Connect Logo" style="border: 0 !important; display: block !important; margin: 0 auto !important; padding: 0 !important; pointer-events: none !important; user-select: none !important; -webkit-user-select: none !important; -moz-user-select: none !important; ms-user-select: none !important; outline: none !important; cursor: default !important; max-width: 150px !important; height: auto !important; -webkit-touch-callout: none !important; -webkit-user-drag: none !important; position: relative !important; z-index: 0 !important;" onmousedown="return false" oncontextmenu="return false" />
     </div>
     <div class="title-section">
-      <h3 style="margin: 0; color: #28a745; font-size: 24px; font-weight: 700; text-align: center;">Application Received</h3>
+      <h3 style="margin: 0; color: #1073ac; font-size: 24px; font-weight: 700; text-align: center;">Application Received</h3>
     </div>
     <div class="content">
       <div class="greeting">
@@ -716,7 +716,7 @@ EOD;
         <p>We have successfully received your application and resume. Our recruitment team will carefully review your qualifications and experience.</p>
         <div class="contact-info">
           <p><strong>Questions or need help?</strong></p>
-          <p><a href="mailto:hr-ms@zconnect.ph" style="color: #28a745; text-decoration: none;">hr-ms@zconnect.ph</a></p>
+          <p><a href="mailto:hr-ms@zconnect.ph" style="color: #1073ac; text-decoration: none;">hr-ms@zconnect.ph</a></p>
         </div>
       </div>
     </div>
