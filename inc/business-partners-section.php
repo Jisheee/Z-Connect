@@ -183,11 +183,32 @@
 
       </div>
       
-      <!-- Pagination -->
-      <div class="swiper-pagination bp-swiper-pagination"></div>
+      <!-- Navigation Buttons -->
+      <div class="bp-swiper-nav-container" style="display: flex; justify-content: center; gap: 15px; margin-top: 40px;">
+        <div class="bp-swiper-prev" style="width: 45px; height: 45px; background: white; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #0b5ed7; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </div>
+        <div class="bp-swiper-next" style="width: 45px; height: 45px; background: white; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #0b5ed7; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Add hover effects and disabled state for buttons */
+  .bp-swiper-prev:hover, .bp-swiper-next:hover {
+    background: #f8f9fa !important;
+    border-color: #0b5ed7 !important;
+  }
+  .bp-swiper-prev.swiper-button-disabled, .bp-swiper-next.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    color: #aaa !important;
+    border-color: #e0e0e0 !important;
+  }
+</style>
 
 <script>
   // Initialize Swiper for this section specifically
@@ -197,11 +218,11 @@
         slidesPerView: 1,
         spaceBetween: 30,
         loop: false,
-        pagination: {
-          el: '.bp-swiper-pagination',
-          clickable: true,
+        navigation: {
+          nextEl: '.bp-swiper-next',
+          prevEl: '.bp-swiper-prev',
         },
-        grabCursor: true,
+        allowTouchMove: false, // Disables swiping as requested
         autoHeight: true
       });
     }

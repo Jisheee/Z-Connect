@@ -759,10 +759,11 @@ $(function () {
         delay: 5000,
         disableOnInteraction: false,
       },
-      pagination: {
-        el: ".events-slider .swiper-pagination",
-        clickable: true,
+      navigation: {
+        nextEl: ".events-slider .events-swiper-next",
+        prevEl: ".events-slider .events-swiper-prev",
       },
+      allowTouchMove: false,
       slidesPerView: 1,
       breakpoints: {
         768: {

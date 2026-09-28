@@ -111,7 +111,7 @@
               <span class="meta-item office-address">Block 32 Lot 2 Jasmin Street, T.S. Cruz Subdivision, Almanza II, Las Piñas City, 1751 Philippines.</span>
             </div>
 
-            <div class="map-card">
+            <div class="map-card" id="office-map">
               <iframe
                 src="https://www.google.com/maps?q=14.4222209,121.0212331&z=18&output=embed"
                 loading="lazy"
