@@ -124,22 +124,6 @@
               </div>
             </div>
           </div>
-          
-          <!-- Partner Logos now outside text-column to fix mix-blend-mode stacking context -->
-          <div class="panel-4-partners" style="position: absolute; bottom: 40px; width: 100%; z-index: 5; opacity: 0; pointer-events: none;">
-            <div class="container">
-              <div class="clients-logos d-flex align-items-center justify-content-around flex-wrap" style="gap: 30px;">
-                    <div><img class="img-fluid logo" style="max-height: 70px; filter: brightness(0) invert(1); opacity: 0.8;" src="assets/images-zconnect/clients-logos/3D_Networks_400x300.png?v=2" alt=""></div>
-                    <div><img class="img-fluid logo" style="max-height: 70px; filter: brightness(0) invert(1); opacity: 0.8;" src="assets/images-zconnect/clients-logos/360_degrees_nobg.png" alt=""></div>
-                    <div><img class="img-fluid logo" style="max-height: 70px; filter: brightness(0) invert(1); opacity: 0.8;" src="assets/images-zconnect/clients-logos/abbe_400x300.png?v=2" alt=""></div>
-                    <div><img class="img-fluid logo" style="max-height: 70px; filter: brightness(0) invert(1); opacity: 0.8;" src="assets/images-zconnect/clients-logos/acccenture_nobg.png" alt=""></div>
-                    <div><img class="img-fluid logo" style="max-height: 70px; filter: brightness(0) invert(1); opacity: 0.8;" src="assets/images-zconnect/clients-logos/ampleon_nobg.png" alt=""></div>
-                    <div><img class="img-fluid logo" style="max-height: 70px; filter: brightness(0) invert(1); opacity: 0.8;" src="assets/images-zconnect/clients-logos/Arellano_University_nobg.png" alt=""></div>
-                    <div><img class="img-fluid logo" style="max-height: 70px; filter: brightness(0) invert(1); opacity: 0.8;" src="assets/images-zconnect/clients-logos/atos_400x300.png?v=2" alt=""></div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -154,6 +138,9 @@
     
     <!-- Start Services Section-->
     <?php include('inc/services-section.php');?>
+
+    <!-- Start Business Partners Section-->
+    <?php include('inc/business-partners-section.php');?>
 
     <!-- Start About Section-->
     <?php include('inc/about-us-section.php');?>
