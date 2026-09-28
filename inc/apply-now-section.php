@@ -18,8 +18,8 @@
             <div class="col-12 col-xl-7 col-lg-7">
               <div class="openings-column-wrapper">
                 <div class="openings-header mb-4">
-                  <span class="openings-pretitle">CAREER OPPORTUNITIES</span>
-                  <h3 class="openings-title">Open Positions</h3>
+                  <span class="openings-pretitle"></span>
+                  <h3 class="openings-title">Career Opportunities</h3>
                   <p class="openings-subtitle">Find your next role and work on high-impact enterprise projects.</p>
                 </div>
 
