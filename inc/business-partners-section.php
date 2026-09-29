@@ -1,4 +1,4 @@
-<section class="business-partners-section mega-section" id="business-partners" style="background-color: #ffffff; padding: 80px 0;">
+<section class="business-partners-section mega-section" id="business-partners" style="background-color: #ffffff; padding: 40px 0;">
   <div class="container main-content-wrapper">
     <div class="sec-heading centered text-center mb-5">
       <div class="content-area">
@@ -27,26 +27,28 @@
       }
       @media (min-width: 992px) {
           .bp-grid {
-              grid-template-columns: repeat(6, 1fr); /* 6 columns x 5 rows = 30 logos per page */
+              grid-template-columns: repeat(6, 1fr); /* 6 columns x 3 rows = 18 logos per page */
           }
       }
       .bp-logo-card {
           background: #fff;
           border: 1px solid #e2e8f0;
           border-radius: 12px;
-          padding: 15px;
+          padding: 10px;
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 110px;
+          height: 85px;
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
       }
-      .bp-logo-card:hover {
-          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-          transform: translateY(-5px);
-          border-color: #0076de;
+      @media (hover: hover) {
+          .bp-logo-card:hover {
+              box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+              transform: translateY(-5px);
+              border-color: #0076de;
+          }
       }
       .bp-logo-card img {
           max-width: 100%;
@@ -84,12 +86,9 @@
     <div class="swiper business-partners-swiper wow fadeInUp" data-wow-delay=".8s">
       <div class="swiper-wrapper">
         
-        <!-- Page 1 (First 30 Partners) -->
-        <div class="swiper-slide">
-          <div class="bp-grid">
-            <?php
-              $page1_partners = [
-                ['name' => '3D Networks', 'path' => 'assets/images-zconnect/clients-logos/3D_Networks_400x300.png?v=2', 'url' => 'https://www.3dnetworks.com/'],
+        <?php
+              $all_partners = [
+['name' => '3D Networks', 'path' => 'assets/images-zconnect/clients-logos/3D_Networks_400x300.png?v=2', 'url' => 'https://www.3dnetworks.com/'],
                 ['name' => '360 degrees', 'path' => 'assets/images-zconnect/clients-logos/360_degrees_nobg.png', 'url' => 'https://www.360degreessystemscorporation.com/'],
                 ['name' => 'Abbe', 'path' => 'assets/images-zconnect/clients-logos/abbe_400x300.png?v=2', 'url' => 'https://abbe.com.ph/'],
                 ['name' => 'Accenture', 'path' => 'assets/images-zconnect/clients-logos/acccenture_nobg.png', 'url' => 'https://www.accenture.com/ph-en'],
@@ -118,26 +117,8 @@
                 ['name' => 'JACA Const. & Mngt', 'path' => 'assets/images/business-partners-logos/jaca.jpg', 'url' => 'https://www.jaca.com.ph/'],
                 ['name' => 'JFE', 'path' => 'assets/images/business-partners-logos/JFE.jpg', 'url' => 'https://www.jfe-steel.co.jp/en/'],
                 ['name' => 'Jobstreet.com', 'path' => 'assets/images/business-partners-logos/jobstreet.png', 'url' => 'https://www.jobstreet.com.ph/'],
-                ['name' => 'KMC', 'path' => 'assets/images/business-partners-logos/kmc.png', 'url' => 'https://kmc.solutions/']
-              ];
-              foreach ($page1_partners as $partner) {
-                $link = isset($partner['url']) ? $partner['url'] : 'https://www.google.com/search?q=' . urlencode($partner['name'] . ' official website');
-                echo '<div class="bp-logo-card" title="' . htmlspecialchars($partner['name']) . '">';
-                echo '<a href="' . htmlspecialchars($link) . '" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none; cursor: pointer;">';
-                echo '<img loading="lazy" src="' . $partner['path'] . '" alt="' . htmlspecialchars($partner['name']) . '" onerror="this.style.display=\'none\';">';
-                echo '</a>';
-                echo '</div>';
-              }
-            ?>
-          </div>
-        </div>
-
-        <!-- Page 2 (Next 30 Partners) -->
-        <div class="swiper-slide">
-          <div class="bp-grid">
-            <?php
-              $page2_partners = [
-                ['name' => 'Maynilad', 'path' => 'assets/images/business-partners-logos/maynilad.png', 'url' => 'https://www.mayniladwater.com.ph/'],
+                ['name' => 'KMC', 'path' => 'assets/images/business-partners-logos/kmc.png', 'url' => 'https://kmc.solutions/'],
+['name' => 'Maynilad', 'path' => 'assets/images/business-partners-logos/maynilad.png', 'url' => 'https://www.mayniladwater.com.ph/'],
                 ['name' => 'Meralco', 'path' => 'assets/images/business-partners-logos/Meralco Logo.webp', 'url' => 'https://www.meralco.com.ph/'],
                 ['name' => 'nexperia', 'path' => 'assets/images/business-partners-logos/Nexperia Logo.webp', 'url' => 'https://www.nexperia.com/'],
                 ['name' => 'nexus technologies', 'path' => 'assets/images/business-partners-logos/Nexus Tech Logo.png', 'url' => 'https://nexustech.com.ph/'],
@@ -167,19 +148,22 @@
                 ['name' => 'Watsons', 'path' => 'assets/images/business-partners-logos/Watsons Logo.png', 'url' => 'https://www.watsons.com.ph/'],
                 ['name' => 'WeServ Systems International', 'path' => 'assets/images/business-partners-logos/weserv.jpg', 'url' => 'https://weserv.com/home'],
                 ['name' => 'Western Digital', 'path' => 'assets/images/business-partners-logos/Western Digital Logo.png', 'url' => 'https://www.westerndigital.com/']
-              ];
+];
 
-              foreach ($page2_partners as $partner) {
-                $link = isset($partner['url']) ? $partner['url'] : 'https://www.google.com/search?q=' . urlencode($partner['name'] . ' official website');
-                echo '<div class="bp-logo-card" title="' . htmlspecialchars($partner['name']) . '">';
-                echo '<a href="' . htmlspecialchars($link) . '" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none; cursor: pointer;">';
-                echo '<img loading="lazy" src="' . $partner['path'] . '" alt="' . htmlspecialchars($partner['name']) . '" onerror="this.style.display=\'none\';">';
-                echo '</a>';
+              $pages = array_chunk($all_partners, 18);
+              foreach ($pages as $page_index => $page_partners) {
+                echo '<div class="swiper-slide">';
+                echo '<div class="bp-grid">';
+                foreach ($page_partners as $partner) {
+                  $link = isset($partner['url']) ? $partner['url'] : 'https://www.google.com/search?q=' . urlencode($partner['name'] . ' official website');
+                  echo '<a href="' . htmlspecialchars($link) . '" target="_blank" rel="noopener noreferrer" class="bp-logo-card" title="' . htmlspecialchars($partner['name']) . '" style="text-decoration: none;">';
+                  echo '<img loading="lazy" src="' . $partner['path'] . '" alt="' . htmlspecialchars($partner['name']) . '" onerror="this.style.display=\'none\';">';
+                  echo '</a>';
+                }
+                echo '</div>';
                 echo '</div>';
               }
             ?>
-          </div>
-        </div>
 
       </div>
       
@@ -223,7 +207,9 @@
           prevEl: '.bp-swiper-prev',
         },
         allowTouchMove: false, // Disables swiping as requested
-        autoHeight: true
+        preventClicks: false,
+        preventClicksPropagation: false,
+        autoHeight: false
       });
     }
   });
