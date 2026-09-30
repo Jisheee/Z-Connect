@@ -1,87 +1,9 @@
-<section class="business-partners-section mega-section" id="business-partners" style="background: linear-gradient(180deg, #dcf0ff 0%, #f4f9ff 100%); padding: 60px 0; position: relative; overflow: hidden;">
-  <!-- Decorative background elements -->
-  <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,118,222,0.15) 0%, transparent 70%); border-radius: 50%; z-index: 0;"></div>
-  <div style="position: absolute; bottom: 0; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,118,222,0.12) 0%, transparent 70%); border-radius: 50%; z-index: 0;"></div>
-  
-  <div class="container main-content-wrapper" style="position: relative; z-index: 2;">
-    <div class="sec-heading centered text-center mb-5">
-      <div class="content-area">
-        <span class="pre-title wow fadeInUp" data-wow-delay=".2s" style="color: #0076de; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Trusted By</span>
-        <h2 class="title wow fadeInUp" data-wow-delay=".4s" style="color: #212529; font-size: 2.5rem; font-weight: 700; margin-top: 10px;">Our Clients</h2>
-        <p class="subtitle wow fadeInUp" data-wow-delay=".6s" style="color: #6c757d; max-width: 600px; margin: 15px auto 0;">We are proud to collaborate with top organizations and industry leaders.</p>
-      </div>
-    </div>
-    
-    <style>
-      .bp-grid {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 12px;
-          padding: 5px;
-      }
-      .bp-logo-card {
-          flex: 0 0 calc((100% - (2 * 12px)) / 3);
-          background: #fff;
-          border: 1px solid #e2e8f0;
-          border-radius: 6px;
-          padding: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 64px;
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
-      }
-      @media (min-width: 576px) {
-          .bp-logo-card {
-              flex: 0 0 calc((100% - (3 * 12px)) / 4);
-          }
-      }
-      @media (min-width: 768px) {
-          .bp-logo-card {
-              flex: 0 0 calc((100% - (5 * 12px)) / 6);
-          }
-      }
-      @media (min-width: 992px) {
-          .bp-logo-card {
-              flex: 0 0 calc((100% - (7 * 12px)) / 8);
-          }
-      }
-      @media (min-width: 1200px) {
-          .bp-logo-card {
-              flex: 0 0 calc((100% - (8 * 12px)) / 9);
-          }
-      }
-      @media (hover: hover) {
-          .bp-logo-card:hover {
-              box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-              transform: translateY(-5px);
-              border-color: #0076de;
-          }
-      }
-      .bp-logo-card img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-          position: relative;
-          z-index: 2;
-      }
-      .bp-logo-card .bp-alt-text {
-          position: absolute;
-          font-size: 0.8rem;
-          color: #a0aec0;
-          text-align: center;
-          padding: 10px;
-          z-index: 1;
-      }
-    </style>
+import re
+file_path = r'c:\Users\lynlo\OneDrive\Desktop\ZConnect GIT\inc\business-partners-section.php'
+with open(file_path, 'r', encoding='utf-8') as f:
+    content = f.read()
 
-    <div class="bp-grid-wrapper wow fadeInUp" data-wow-delay=".8s">
-      <div class="bp-grid">
-        <?php
-              $all_partners = [
+new_array = '''              $all_partners = [
                 ['name' => 'Ampleon', 'path' => 'assets/images-zconnect/clients-logos/ampleon_nobg.png', 'url' => 'https://www.ampleon.com/', 'scale' => 2.2],
                 ['name' => 'Atos', 'path' => 'assets/images-zconnect/clients-logos/atos_400x300.png?v=2', 'url' => 'https://atos.net/en/'],
                 ['name' => 'bneXt', 'path' => 'assets/images/business-partners-logos/bnext.png', 'url' => 'https://bnext.tech/'],
@@ -101,28 +23,26 @@
                 ['name' => 'Western Digital', 'path' => 'assets/images/business-partners-logos/WesternDigital new.png', 'url' => 'https://www.westerndigital.com/'],
                 ['name' => 'ST Telemedia', 'path' => 'assets/images/business-partners-logos/STTELEMEDIA.png', 'url' => 'https://www.sttelemedia.com/'],
                 ['name' => 'EXL', 'path' => 'assets/images/business-partners-logos/EXL.png', 'url' => 'https://www.exlservice.com/'],
-                ['name' => 'PHINMA', 'path' => 'assets/images/business-partners-logos/PHINMA.png', 'url' => 'https://www.phinma.edu.ph/', 'scale' => 1.3],
-                ['name' => 'Ayala Malls', 'path' => 'assets/images/business-partners-logos/ayalamalls.png', 'url' => 'https://www.ayalamalls.com/', 'scale' => 1.3],
+                ['name' => 'PHINMA', 'path' => 'assets/images/business-partners-logos/PHINMA.png', 'url' => 'https://www.phinma.edu.ph/', 'scale' => 2.2],
+                ['name' => 'Ayala Malls', 'path' => 'assets/images/business-partners-logos/ayalamalls.png', 'url' => 'https://www.ayalamalls.com/', 'scale' => 2.2],
                 ['name' => 'Sagittarius Mining', 'path' => 'assets/images/business-partners-logos/smi-logo.png', 'url' => 'https://www.smi.com.ph/'],
                 ['name' => 'Cebeco II', 'path' => 'assets/images/business-partners-logos/cebeco.webp', 'url' => 'http://cebeco2.com.ph/'],
                 ['name' => 'Autoliv', 'path' => 'assets/images/business-partners-logos/autoliv.png', 'url' => 'https://www.autoliv.com/'],
                 ['name' => 'Densoten', 'path' => 'assets/images/business-partners-logos/denso-ten.png', 'url' => 'https://www.denso-ten.com/'],
                 ['name' => 'Furukawa', 'path' => 'assets/images/business-partners-logos/furukawa.png', 'url' => 'https://www.furukawa.co.jp/en/', 'scale' => 2.2]
-              ];
+              ];'''
+old_array_pattern = r'              \$all_partners = \[.*?\];'
+content = re.sub(old_array_pattern, new_array, content, flags=re.DOTALL)
 
-              foreach ($all_partners as $partner) {
+old_loop_pattern = r'              foreach \(\$all_partners as \$partner\) \{.*?echo \'</a>\';\n              \}'
+new_loop = '''              foreach ($all_partners as $partner) {
                   $link = isset($partner['url']) ? $partner['url'] : 'https://www.google.com/search?q=' . urlencode($partner['name'] . ' official website');
                   $scale_style = isset($partner['scale']) ? ' style="width: ' . ($partner['scale'] * 100) . '%; max-width: ' . ($partner['scale'] * 100) . '%; max-height: ' . ($partner['scale'] * 100) . '%; object-fit: contain;"' : '';
                   echo '<a href="' . htmlspecialchars($link) . '" target="_blank" rel="noopener noreferrer" class="bp-logo-card" title="' . htmlspecialchars($partner['name']) . '" style="text-decoration: none; overflow: hidden;">';
                   echo '<img loading="lazy" src="' . $partner['path'] . '" alt="' . htmlspecialchars($partner['name']) . '" onerror="this.style.display=\'none\';"' . $scale_style . '>';
                   echo '</a>';
-              }
-        ?>
-      </div>
-    </div>
-  </div>
-</section>
+              }'''
+content = re.sub(old_loop_pattern, new_loop, content, flags=re.DOTALL)
 
-
-
-
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(content)
