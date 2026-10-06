@@ -4570,6 +4570,18 @@ body.rounded-btns .read-more {
 .dark-color-footer .copyrights .creadits .link {
   color: var(--clr-white);
 }
+.dark-color-footer .sc-wrapper .indeed-logo {
+  display: block;
+  width: 12px;
+  height: 16px;
+  background-color: var(--clr-white);
+  -webkit-mask: url("../assets/images-zconnect/logo/indeed-icon.svg") center/contain no-repeat;
+  mask: url("../assets/images-zconnect/logo/indeed-icon.svg") center/contain no-repeat;
+  transition: background-color 0.3s ease;
+}
+.dark-color-footer .sc-wrapper .sc-item:hover .indeed-logo {
+  background-color: var(--clr-main);
+}
 
 .light-color-footer {
   background-color: var(--clr-grey);

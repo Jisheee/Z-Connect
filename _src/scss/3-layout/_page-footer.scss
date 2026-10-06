@@ -170,6 +170,20 @@
   .copyrights .creadits .link {
     color: $clr-white;
   }
+
+  .sc-wrapper .indeed-logo {
+    display: block;
+    width: 12px;
+    height: 16px;
+    background-color: $clr-white;
+    -webkit-mask: url("../assets/images-zconnect/logo/indeed-icon.svg") center / contain no-repeat;
+    mask: url("../assets/images-zconnect/logo/indeed-icon.svg") center / contain no-repeat;
+    transition: background-color 0.3s ease;
+  }
+
+  .sc-wrapper .sc-item:hover .indeed-logo {
+    background-color: $clr-main;
+  }
 }
 
 .light-color-footer {

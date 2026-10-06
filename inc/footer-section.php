@@ -53,13 +53,17 @@
             <h2 class=" footer-col-title">contact information</h2>
             
             <div class="footer-col-content-wrapper">       
-              <div class="contact-info-card"><i class="bi bi-envelope icon"></i><a class="text-lowercase info email" href="mailto:hr-ms@zconnect.ph">sales@zconnect.ph</a></div>
+              <div class="contact-info-card"><i class="bi bi-envelope icon"></i><span class="text-lowercase info email" data-user="sales" data-domain="zconnect.ph">sales@zconnect.ph</span></div>
               
-              <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><a class="info" href="contact-us.php#office-map" style="text-decoration: none; color: white; transition: color 0.3s;" onmouseover="this.style.color='#0b5ed7'" onmouseout="this.style.color='white'">Block 32 Lot 2 Jasmin Street,<br>T.S. Cruz Subdivision,<br>Almanza II, Las Piñas City, 1751 Philippines.</a></div>
+              <div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><a class="info" href="contact-us.php#office-map" style="text-decoration: none; color: white;">Block 32 Lot 2 Jasmin Street,<br>T.S. Cruz Subdivision,<br>Almanza II, Las Piñas City, 1751 Philippines.</a></div>
               <div class="contact-info-card">
                 <div class="social-icons">
                   <div class="sc-wrapper dir-row sc-size-32">
-                     <?php include('inc/social-media-links.php');?>
+                     <?php
+                     $show_indeed_profile = true;
+                     include('inc/social-media-links.php');
+                     unset($show_indeed_profile);
+                     ?>
                   </div>
                 </div>
               </div>
@@ -133,7 +137,7 @@
         <script src="js/falling-bits.js"></script>
 
         <!-- Hero Scroll Animation -->
-        <script src="js/hero-scroll.js"></script>
+        <script src="js/hero-scroll.js?v=3"></script>
         
         <!--     main     -->
         <script src="js/main.js"></script>

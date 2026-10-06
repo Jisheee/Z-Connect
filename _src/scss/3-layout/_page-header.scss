@@ -288,6 +288,7 @@ $padding-for-hero-section: $link-height;
       &:hover {
         .nav-label {
           text-decoration: underline;
+          text-decoration-color: #60B644;
           text-decoration-thickness: 2px;
           text-underline-offset: 0.35rem;
         }

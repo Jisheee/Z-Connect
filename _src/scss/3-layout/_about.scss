@@ -32,6 +32,16 @@
       align-items: center;
       justify-content: space-between;
 
+      .btn-solid {
+        background-color: $clr-main;
+        border-color: $clr-main;
+
+        &:hover {
+          background-color: $clr-secondary;
+          border-color: $clr-secondary;
+        }
+      }
+
       .signature {
         display: flex;
         flex-direction: column;

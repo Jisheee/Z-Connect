@@ -481,7 +481,9 @@ $(function () {
   }
 
   $(document).on('click', '.modal-cancel-btn-contact', function () {
-    hideContactModal();
+    if (contactModal) {
+      hideContactModal();
+    }
   });
 
   submitBtn.on("click", function (e) {
@@ -500,6 +502,10 @@ $(function () {
   });
 
   $(document).on('click', '.modal-confirm-btn-contact', function () {
+    if (!contactModal || !contactConfirmModal || !contactLoadingModal) {
+      return;
+    }
+
     showContactLoading();
     submitBtn.prop('disabled', true);
 

@@ -17,7 +17,7 @@
   --ss-font: 'Jost', sans-serif;
 
   position: relative;
-  background-color: var(--ss-bg);
+  background: linear-gradient(118deg, #172633 0%, #131d28 42%, var(--ss-bg) 100%);
   color: var(--ss-text);
   font-family: var(--ss-font);
   /* NO overflow:hidden — it kills position:sticky */
@@ -29,16 +29,6 @@
   inset: 0;
   pointer-events: none;
   z-index: 0;
-}
-
-.sticky-solutions__grid-lines::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: var(--ss-border);
 }
 
 .sticky-solutions__grid-dot {
@@ -460,9 +450,9 @@
 }
 
 .sticky-solutions__cta:hover {
-  background: #0b5ed7;
+  background: var(--clr-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(13, 110, 253, 0.3);
+  box-shadow: 0 8px 24px rgba(96, 182, 68, 0.3);
   color: #fff;
   text-decoration: none;
 }

@@ -12,11 +12,11 @@
         <!-- Sticky section title (pinned top-left) -->
         <div class="sticky-solutions__rail">
           <div class="sticky-solutions__rail-sticky">
-            <h1 class="sticky-solutions__upper">Solutions We Provide</h1>
+            <h1 class="sticky-solutions__upper wow fadeInUp" data-wow-delay=".2s">Solutions We Provide</h1>
           </div>
         </div>
 
-        <div class="folder-solutions" aria-label="Solutions we provide">
+        <div class="folder-solutions wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" aria-label="Solutions we provide">
           <div class="folder-solutions__tabs" role="tablist" aria-label="Services">
             <button class="folder-solutions__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="folder-panel-0" id="folder-tab-0" data-folder-index="0"><span>01</span><strong>Networking & Structured Cabling</strong></button>
             <button class="folder-solutions__tab" type="button" role="tab" aria-selected="false" aria-controls="folder-panel-1" id="folder-tab-1" data-folder-index="1"><span>02</span><strong>Data Center</strong></button>
@@ -54,7 +54,7 @@
         </div>
 
         <!-- Two-column body -->
-        <div class="sticky-solutions__body">
+        <div class="sticky-solutions__body wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
 
           <!-- LEFT: Single sticky media column with all images stacked -->
           <div class="sticky-solutions__media-col">

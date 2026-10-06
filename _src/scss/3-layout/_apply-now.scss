@@ -385,9 +385,9 @@
         box-shadow: 0 4px 16px rgba($clr-main-rgb, 0.28);
 
         &:hover {
-          background-color: $clr-dark-blue;
+          background-color: $clr-secondary;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba($clr-main-rgb, 0.35);
+          box-shadow: 0 8px 24px rgba($clr-secondary-rgb, 0.35);
         }
       }
     }

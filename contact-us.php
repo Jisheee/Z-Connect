@@ -61,7 +61,7 @@
     <section class="contact-us-form-section mega-section">
       <div class="container">
         <div class="contact-layout">
-          <div class="contact-copy">
+          <div class="contact-copy wow fadeInLeft" data-wow-delay=".2s">
             <h2 class="contact-title">Contact Us</h2>
 
             <div class="custom-form-area input-boxed">
@@ -104,7 +104,7 @@
             </div>
           </div>
 
-          <div class="contact-info-block">
+          <div class="contact-info-block wow fadeInRight" data-wow-delay=".4s">
             <div class="meta-tabs">
               <span class="meta-item">Office Address</span>
               <span class="meta-divider"></span>

@@ -173,7 +173,7 @@ Artificial Intelligence (AI).  It has the power not only to automate buildings b
           <!-- Start service sidebar-->
           <div class="col-12 col-xl-4 order-1 order-lg-2">
             <div class="service-sidebar">
-              <div class="sidebar-pane">
+              <div class="sidebar-pane wow fadeInUp" data-wow-delay=".2s">
                 <h2 class="sidebar-title">List of Services</h2>
                 <ul class="list" id="sidebar">
                   <!-- Note: I have removed the class "bi-arrow-right" from the class of the li tags.  I places an arrow on the hovered item when in use. -->

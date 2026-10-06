@@ -158,51 +158,5 @@
     <?php include('inc/footer-section.php');?>
     <!-- End Footer Section -->
 
-    <!-- Begin Script Files -->
-    <!-- Begin jquery -->
-    <script src="js/vendors/jquery-3.6.1.min.js"></script>
-    <!-- End jquery -->
-    <!-- Begin Bootstrap bundles JS -->
-    <script src="js/vendors/bootstrap.bundle.min.js"></script>
-    <!-- End Bootstrap bundles JS -->
-    <!-- Begin Isotope -->
-    <script src="js/vendors/isotope-min.js"></script>
-    <!-- End Isotope -->
-    <!-- Begin Swiper Slider -->
-    <script src="js/vendors/swiper-bundle.min.js"></script>
-    <!-- End Swiper Slider -->
-    <!-- Begin Wow scroll animation -->
-    <script src="js/vendors/wow.min.js"></script>
-    <!-- End Wow scroll animation -->
-    <!-- Begin Nice Select -->
-    <!-- <script src="js/vendors/jquery.nice-select.js"></script> -->
-    <!-- End Nice Select -->
-    <!-- Begin Splitting JS -->
-    <script src="js/vendors/splitting.min.js"></script>
-    <!-- End Splitting JS -->
-    <!-- Begin Odometer -->
-    <!-- <script src="js/vendors/odometer.min.js"></script> -->
-    <!-- End Odometer -->
-    <!-- Begin CountUp -->
-    <script src="js/vendors/jquery.countTo.js"></script>
-    <!-- End CountUp -->
-    <!-- Begin Appear -->
-    <script src="js/vendors/appear.min.js"></script>
-    <!-- End Appear -->
-    <!-- Begin Vanilla-tilt -->
-    <script src="js/vendors/vanilla-tilt.min.js"></script>
-    <!-- End Vanilla-tilt -->
-    <!-- Begin Fancybox -->
-    <script src="js/vendors/jquery.fancybox.min.js"></script>
-    <!-- End Fancybox -->
-    <!-- Begin Particles -->
-    <script src="js/vendors/particles.min.js"></script>
-    <!-- End Particles -->
-    <!-- Begin Ajax Chimp -->
-    <script src="js/vendors/jquery.ajaxchimp.min.js"></script>
-    <!-- End Ajax Chimp -->
-    <!-- Begin Main custom JS -->
-    <script src="js/main.js"></script>
-    <!-- End Main custom JS -->
   </body>
 </html>

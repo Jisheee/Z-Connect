@@ -398,12 +398,14 @@
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(16, 115, 172, 0.28);
+  border-color: transparent !important;
 }
 
 .apply-now .careers-feature-card .feature-card-footer .btn-solid:hover {
-  background-color: #060922;
+  background-color: #60b644;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(16, 115, 172, 0.35);
+  box-shadow: 0 8px 24px rgba(96, 182, 68, 0.35);
+  border-color: transparent !important;
 }
 
 /* Responsive Tweaks */

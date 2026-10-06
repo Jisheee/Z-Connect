@@ -46,7 +46,7 @@
         <link rel="stylesheet" href="css/sticky-solutions.css?v=2">
         
         <!-- Hero Scroll CSS -->
-        <link rel="stylesheet" href="css/hero-scroll.css?v=4">
+        <link rel="stylesheet" href="css/hero-scroll.css?v=6">
         <title>Z-Connect</title>
   </head>
   <body>
@@ -113,7 +113,11 @@
               <div class="hero-text-area hero-text-box content-always-light">
                 <div class="hero-social-icons mb-3">
                   <div class="sc-wrapper dir-row sc-flat">
-                    <?php include('inc/social-media-links.php');?>
+                    <?php
+                    $show_indeed_profile = true;
+                    include('inc/social-media-links.php');
+                    unset($show_indeed_profile);
+                    ?>
                   </div>
                 </div>
                 <h1 class="slide-title mb-4">Ready to Join Our Team?</h1>

@@ -92,7 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div class="footer">
       <p><strong>Message Submission Details</strong></p>
-      <p>Submitted on: " . date('F j, Y \\a\\t g:i A') . "</p>
       <p>Submitted on: $submittedOn</p>
       <p style="color: #999; font-size: 11px; margin-top: 15px;">This is an automated email from Z-Connect contact form.</p>
     </div>

@@ -1,4 +1,18 @@
 <section class="credentials-section has-dark-bg mega-section" id="certifications">
+  <style>
+    @media (max-width: 768px) {
+      #certifications .iso-image-container {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      #certifications .iso-image-container img {
+        max-width: 100% !important;
+        height: auto;
+      }
+    }
+  </style>
+
   <div class="overlay-photo-image-bg parallax" data-bg-img="assets/images/sections-bg-images/1.jpg"
     data-bg-opacity=".25"> </div>
 
@@ -66,7 +80,7 @@
     <!-- Certifications Grid -->
     <div class="modern-cert-grid mb-5">
       <!-- Card 1 -->
-      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #0076de; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="0">
+      <div class="modern-cert-card cert-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #0076de; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="0">
         <div class="modern-circle-logo"><img src="assets/awards/trailblazer-logo.png" alt="Trailblazer Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">TRAILBLAZER SOLUTIONS</p>
@@ -83,7 +97,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #00a3e0; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="1">
+      <div class="modern-cert-card cert-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #00a3e0; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="1">
         <div class="modern-circle-logo"><img src="assets/awards/AWS.png" alt="AWS Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">AWS DISTRIBUTION PHIL., CORP.</p>
@@ -100,7 +114,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #f59e0b; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="2">
+      <div class="modern-cert-card cert-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #f59e0b; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="2">
         <div class="modern-circle-logo"><img src="assets/awards/AEM.png" alt="TestPro Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">TESTPRO INTERNATIONAL</p>
@@ -115,7 +129,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="modern-cert-card cert-card-clickable" style="border-top-color: #f59e0b; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="3">
+      <div class="modern-cert-card cert-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #f59e0b; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-index="3">
         <div class="modern-circle-logo"><img src="assets/awards/CCNA-Cert.png" alt="CCNA Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
         <p class="cert-subtitle">CISCO SYSTEMS, INC.</p>
@@ -140,7 +154,7 @@
     <!-- Partner Awards Grid -->
     <div class="modern-partner-grid pb-5">
       <!-- Card 1 -->
-      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #e53e3e; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="0">
+      <div class="modern-partner-card partner-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #e53e3e; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="0">
         <div class="modern-circle-logo" style="border-color: #e53e3e;"><img
             src="assets/images-zconnect/partner-logos/Network/Panduit.png" alt="Panduit Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -155,7 +169,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #3182ce; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="1">
+      <div class="modern-partner-card partner-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #3182ce; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="1">
         <div class="modern-circle-logo" style="border-color: #3182ce;"><img
             src="assets/images-zconnect/partner-logos/Network/MEC.png" alt="MEC Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -170,7 +184,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #38a169; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="2">
+      <div class="modern-partner-card partner-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #38a169; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="2">
         <div class="modern-circle-logo" style="border-color: #38a169;"><img
             src="assets/images-zconnect/partner-logos/Network/SYTEC.png" alt="Sytec Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -185,7 +199,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #805ad5; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="3">
+      <div class="modern-partner-card partner-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #805ad5; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="3">
         <div class="modern-circle-logo" style="border-color: #805ad5;"><img
             src="assets/images-zconnect/partner-logos/Datacenter/T-ELECTRONICS.png" alt="Tyco Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -200,7 +214,7 @@
       </div>
 
       <!-- Card 5 -->
-      <div class="modern-partner-card partner-card-clickable" style="border-top-color: #d69e2e; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="4">
+      <div class="modern-partner-card partner-card-clickable wow fadeInUp" data-wow-delay=".2s" style="border-top-color: #d69e2e; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal" data-card-type="partner" data-card-index="4">
         <div class="modern-circle-logo" style="border-color: #d69e2e;"><img
             src="assets/images-zconnect/partner-logos/Network/belden-logo.png" alt="Belden Logo"
             style="max-width: 80%; max-height: 80%; object-fit: contain;"></div>
@@ -262,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalBody = document.getElementById('modalCardContent');
         // Clone the card and display in modal
         const clonedCard = selectedCard.cloneNode(true);
+        clonedCard.classList.remove('wow', 'fadeInUp', 'animated');
         clonedCard.style.cursor = 'default';
         clonedCard.removeAttribute('data-bs-toggle');
         clonedCard.removeAttribute('data-bs-target');

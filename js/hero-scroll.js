@@ -9,8 +9,11 @@ function initHeroScroll() {
     const partnerLogos = document.querySelector('.panel-4-partners');
     const panelControls = gsap.utils.toArray('.hero-panel-button');
     const panelTransitionDuration = 0.9;
+    const mobileViewport = window.matchMedia('(max-width: 768px)');
+    const swipeSurface = document.querySelector('.hero-scroll-container');
     let activePanel = 0;
     let transitionId = 0;
+    let touchStart = null;
 
     if (panels.length === 0) return;
 
@@ -61,10 +64,63 @@ function initHeroScroll() {
             showPanel(nextPanel);
         });
     });
+
+    if (swipeSurface) {
+        swipeSurface.addEventListener('pointerdown', (event) => {
+            if (!mobileViewport.matches || event.pointerType !== 'touch' ||
+                event.target.closest('a, button, input, textarea, select')) {
+                touchStart = null;
+                return;
+            }
+
+            touchStart = { x: event.clientX, y: event.clientY, pointerId: event.pointerId };
+        });
+
+        window.addEventListener('pointerup', (event) => {
+            if (!touchStart || event.pointerType !== 'touch' || event.pointerId !== touchStart.pointerId) return;
+
+            const deltaX = event.clientX - touchStart.x;
+            const deltaY = event.clientY - touchStart.y;
+            touchStart = null;
+
+            if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) return;
+
+            event.preventDefault();
+            const direction = deltaX < 0 ? 1 : -1;
+            const nextPanel = (activePanel + direction + panels.length) % panels.length;
+            showPanel(nextPanel);
+        }, { passive: false });
+
+        window.addEventListener('pointercancel', () => {
+            touchStart = null;
+        });
+    }
+}
+
+function initHeroCtaSwap() {
+    const ctaAreas = document.querySelectorAll('.hero-scroll-container .scroll-panel .cta-links-area');
+
+    ctaAreas.forEach((ctaArea) => {
+        ctaArea.querySelectorAll('.btn-solid, .btn-outline').forEach((button) => {
+            button.addEventListener('pointerenter', (event) => {
+                if (event.pointerType !== 'mouse') return;
+                ctaArea.classList.toggle('is-color-swapped');
+            });
+        });
+
+        ctaArea.addEventListener('pointerleave', (event) => {
+            if (event.pointerType !== 'mouse') return;
+            ctaArea.classList.remove('is-color-swapped');
+        });
+    });
 }
 
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeroScroll);
+    document.addEventListener('DOMContentLoaded', () => {
+        initHeroScroll();
+        initHeroCtaSwap();
+    });
 } else {
     initHeroScroll();
+    initHeroCtaSwap();
 }

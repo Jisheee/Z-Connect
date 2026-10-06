@@ -193,11 +193,6 @@
     <?php include('inc/footer-section.php');?>
     <!-- End Footer-->
     
-    <!-- jquery -->
-    <script src="js/vendors/jquery-3.6.1.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="js/vendors/bootstrap.bundle.min.js"></script>
-
     <!-- Application Form Validation and Submission -->
     <style>
       /* ============================================================
@@ -554,6 +549,55 @@
         modal.classList.remove('show');
         modalContent.classList.remove('show');
       }
+
+      const submissionBackdrop = document.createElement('div');
+      submissionBackdrop.className = 'modal-backdrop-contact';
+      submissionBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(submissionBackdrop);
+
+      const submissionConfirmModal = document.createElement('div');
+      submissionConfirmModal.className = 'modal-content-popup-contact contact-confirm-modal';
+      submissionConfirmModal.setAttribute('role', 'dialog');
+      submissionConfirmModal.setAttribute('aria-modal', 'true');
+      submissionConfirmModal.setAttribute('aria-labelledby', 'applicationConfirmTitle');
+      submissionConfirmModal.innerHTML = `
+        <span class="contact-modal-icon bi bi-send-check" aria-hidden="true"></span>
+        <h2 id="applicationConfirmTitle">Submit your application?</h2>
+        <p>Please confirm that you want to submit your application to Z-Connect.</p>
+        <div class="contact-modal-actions">
+          <button class="modal-cancel-btn-contact" type="button">Cancel</button>
+          <button class="modal-confirm-btn-contact" type="button">Proceed</button>
+        </div>
+      `;
+      document.body.appendChild(submissionConfirmModal);
+
+      const submissionLoadingModal = document.createElement('div');
+      submissionLoadingModal.className = 'modal-content-popup-contact contact-loading-modal';
+      submissionLoadingModal.setAttribute('role', 'dialog');
+      submissionLoadingModal.setAttribute('aria-modal', 'true');
+      submissionLoadingModal.setAttribute('aria-live', 'polite');
+      submissionLoadingModal.innerHTML = `
+        <span class="contact-loading-spinner" aria-hidden="true"></span>
+        <h2>Submitting your application...</h2>
+        <p>Please wait while we submit your application and resume.</p>
+      `;
+      document.body.appendChild(submissionLoadingModal);
+
+      function showSubmissionConfirmation() {
+        submissionBackdrop.classList.add('show');
+        submissionConfirmModal.classList.add('show');
+      }
+
+      function showSubmissionLoading() {
+        submissionConfirmModal.classList.remove('show');
+        submissionLoadingModal.classList.add('show');
+      }
+
+      function hideSubmissionModals() {
+        submissionBackdrop.classList.remove('show');
+        submissionConfirmModal.classList.remove('show');
+        submissionLoadingModal.classList.remove('show');
+      }
       
       function validateForm() {
         // Reset all error messages
@@ -641,6 +685,21 @@
           return false;
         }
 
+        showSubmissionConfirmation();
+        return false;
+      });
+
+      submissionConfirmModal.querySelector('.modal-cancel-btn-contact').addEventListener('click', hideSubmissionModals);
+      submissionBackdrop.addEventListener('click', function() {
+        if (submissionConfirmModal.classList.contains('show')) {
+          hideSubmissionModals();
+        }
+      });
+      submissionConfirmModal.querySelector('.modal-confirm-btn-contact').addEventListener('click', submitApplication);
+
+      function submitApplication() {
+        showSubmissionLoading();
+
         // Show loading state
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
@@ -662,12 +721,14 @@
           submitBtn.textContent = originalText;
 
           if (data.success) {
+            hideSubmissionModals();
             // Show success modal
             showModal();
             
             // Reset form
             form.reset();
           } else {
+            hideSubmissionModals();
             // Show error message
             let messageDiv = document.getElementById('formMessage');
             if (!messageDiv) {
@@ -686,6 +747,7 @@
           }
         })
         .catch(error => {
+          hideSubmissionModals();
           // Reset button state
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
@@ -711,7 +773,7 @@
         });
 
         return false;
-      });
+      }
     </script>
 
   </body>
